@@ -1,6 +1,14 @@
 # Sublime Text 2 Handlebars.js bundle
 
-At the moment this is just a simple language definition to enable code colouring.
+- Colors of Handlebars expressions are selected to be in contrast with the surrounding HTML.
+- Handlebars expressions get syntax highlighting in HTML attributes.
+- Parameters passed to block expressions get syntax highlighting too.
+- Key bindings for `{{! Handlebars comments }}`
+- Tab triggers for
+  - `if` -> `{{#if }}`
+  - `each` -> `{{#each }}`
+  - `with` -> `{{#with }}`
+  - `par` -> `{{> }}` (for partials)
 
 ## About Handlebars.js
 
@@ -10,13 +18,11 @@ Official website: [handlebarsjs.com](http://handlebarsjs.com/)
 
 ## Credits
 
-Uses the fixes for Sublime by [MarkBorcherding](https://github.com/MarkBorcherding/Handlebars.tmbundle) who in turn adapted [Handlebars.tmbundle](https://github.com/drnic/Handlebars.tmbundle) by Dr Nic.
+Adapted from the great [sublime-text-handlebars](https://github.com/nrw/sublime-text-handlebars) package by Nicholas Westlake.
 
-## Original license
+## License
 
 (The MIT License)
-
-Copyright (c) 2010 Dr Nic Williams, drnicwilliams@gmail.com
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
