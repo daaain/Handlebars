@@ -2,4 +2,5 @@
   <content>{{> ${0}}}</content>
   <tabTrigger>par</tabTrigger>
   <scope>text.html.handlebars,text.html.basic source.js.embedded.html, text.html.twig source.js.embedded.html</scope>
+  <description>partial(handlebars)</description>
 </snippet>
