@@ -3,5 +3,6 @@
   ${0}
 {{/if}}]]></content>
   <tabTrigger>if</tabTrigger>
-  <scope>text.html.handlebars</scope>
+  <scope>text.html.handlebars,text.html.basic source.js.embedded.html, text.html.twig source.js.embedded.html</scope>
+  <description>if(handlebars)</description>
 </snippet>
