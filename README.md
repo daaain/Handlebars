@@ -30,6 +30,14 @@ If you haven't used it yet, just install it from the link above and then:
 
 Package Control will also autoupdate the package from this point on!
 
+## Precompilation
+
+This package does not offer any Handlebars precompilation functionality to keep things simple, but you can use [Guard](https://github.com/guard/guard) (which is a file system watcher) and [Guard-Steering](https://github.com/guard/guard-steering) (a Handlebars precompiler from yours truly) to have all templates precompiled as you save them.
+
+There's also a [Guard package for Sublime](https://github.com/cyphactor/sublime_guard) if you want integration, but I don't personally use this as I'm happy with Guard running in an iTerm window I can access from anywhere.
+
+There are of course Node.js / Grunt based compilers too ([like this](https://npmjs.org/package/grunt-handlebars-js)), but I haven't personally used any yet.
+
 ## Credits
 
 Adapted from the great [sublime-text-handlebars](https://github.com/nrw/sublime-text-handlebars) package by Nicholas Westlake.
