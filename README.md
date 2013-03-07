@@ -6,6 +6,7 @@
 - Key bindings for `{{! Handlebars comments }}`
 - Tab triggers for
   - `if` -> `{{#if }}`
+  - `un` -> `{{#unless }}`
   - `each` -> `{{#each }}`
   - `with` -> `{{#with }}`
   - `par` -> `{{> }}` (for partials)
