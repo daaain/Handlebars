@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[{{#unless ${1}}}
+  ${0}
+{{/unless}}]]></content>
+  <tabTrigger>unless</tabTrigger>
+  <scope>text.html.handlebars,text.html.basic source.js.embedded.html, text.html.twig source.js.embedded.html</scope>
+  <description>unless(handlebars)</description>
+</snippet>
