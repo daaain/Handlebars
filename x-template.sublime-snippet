@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[<script id="$1" type="text/x-handlebars-template">
+    $0
+</script>]]></content>
+  <tabTrigger>x-temp</tabTrigger>
+  <scope>text.html</scope>
+  <description>handlebars template</description>
+</snippet>
