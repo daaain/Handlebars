@@ -10,6 +10,7 @@
   - `each` -> `{{#each }}`
   - `with` -> `{{#with }}`
   - `par` -> `{{> }}` (for partials)
+  - `x-temp` -> `<script id="$1" type="text/x-handlebars-template">` (inline script tag in HTML files)
 
 ## About Handlebars.js
 
