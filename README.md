@@ -5,16 +5,18 @@
 - Parameters passed to block expressions get syntax highlighting too.
 - Key bindings for `{{! Handlebars comments }}`
 - Tab triggers for
-  - `if` -> `{{#if }}`
-  - `un` -> `{{#unless }}`
-  - `each` -> `{{#each }}`
-  - `with` -> `{{#with }}`
-  - `par` -> `{{> }}` (for partials)
-  - `x-temp` -> `<script id="$1" type="text/x-handlebars-template">` (inline script tag in HTML files)
+  - `if` → `{{#if }}`
+  - `ifel` → `{{#if }} {{else}}`
+  - `el` → `{{else}}`
+  - `un` → `{{#unless }}`
+  - `each` → `{{#each }}`
+  - `with` → `{{#with }}`
+  - `par` → `{{> }}` (for partials)
+  - `x-temp` → `<script id="$1" type="text/x-handlebars-template">` (inline script tag in HTML files)
 
 ## About Handlebars.js
 
-It's a great JS templating engine, based on [Mustache](http://mustache.github.com/), but adding the ability to precompile templates and to create custom helpers.
+It's a great JavaScript templating engine, based on [Mustache](http://mustache.github.com/), but adding the ability to precompile templates and to create custom helpers.
 
 Official website: [handlebarsjs.com](http://handlebarsjs.com/)
 
@@ -30,7 +32,7 @@ If you haven't used it yet, just install it from the link above and then:
 4. Choose "Handlebars" in the bottom right corner with one of your template files open
 5. Profit
 
-Package Control will also autoupdate the package from this point on!
+Package Control will also auto-update the package from this point on!
 
 ## Precompilation
 
