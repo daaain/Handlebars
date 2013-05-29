@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[{{#each ${1}}}
-  ${0}
+${0}
 {{/each}}]]></content>
   <tabTrigger>each</tabTrigger>
   <scope>text.html.handlebars,text.html.basic source.js.embedded.html, text.html.twig source.js.embedded.html</scope>
