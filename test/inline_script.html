@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Test</title>
+</head>
+
+<body>
+	<div id="test">
+		<h1>Test</h1>
+		<p>Test</p>
+	</div>
+
+	<script type="text/x-handlebars-template" id="template-gallery">
+		<div class="{{class}}">
+			<div class="content_container">
+				{{{content}}}
+			</div>
+			<div id="gallery">
+				{{#each content.galleryImages}}
+				<a href="{{../content.fullBaseUrl}}{{imageUrl}}">
+					<img src="{{../content.thumbBaseUrl}}{{imageUrl}}" />
+				</a>
+				{{/each}}
+			</div>
+			{{#if date}}
+			<h3 class="date">{{date}}</h3>
+			{{else}}
+			<h3 class="no_date">No date available.</h3>
+			{{/if}}
+			{{!-- <p>Not that interesting.}} <p>No comment.</p>
+			{{!-- <p>Even less interesting. {{#if otherCondition}}<strong>"{{otherTestToken}}"</strong> {{/if}}</p> --}} <p>Nothing to see here.</p>
+			{{!-- <p>Marginally less interesting. {{{testToken}}}</p> --}} <p>Move along.</p>
+		</div>
+	</script>
+</body>
+
+</html>
