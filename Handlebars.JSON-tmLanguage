@@ -64,9 +64,40 @@
                         {
                             "name": "invalid.illegal.bad-comments-or-CDATA.html", 
                             "match": "--"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        "block_comments": {
+            "patterns": [
+                {
+                    "patterns": [
+                        {
+                            "name": "keyword.annotation.handlebars", 
+                            "match": "@\\w*"
                         }, 
                         {
-                            "include": "#embedded-code"
+                            "include": "#comments"
+                        }
+                    ], 
+                    "begin": "\\{\\{!--", 
+                    "end": "--\\}\\}", 
+                    "name": "comment.block.handlebars"
+                }, 
+                {
+                    "captures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.html"
+                        }
+                    }, 
+                    "begin": "<!--", 
+                    "end": "-{2,3}\\s*>", 
+                    "name": "comment.block.html", 
+                    "patterns": [
+                        {
+                            "name": "invalid.illegal.bad-comments-or-CDATA.html", 
+                            "match": "--"
                         }
                     ]
                 }
@@ -137,6 +168,9 @@
             }, 
             "patterns": [
                 {
+                    "include": "#block_comments"
+                }, 
+                {
                     "include": "#comments"
                 }, 
                 {
@@ -192,6 +226,9 @@
             }, 
             "patterns": [
                 {
+                    "include": "#block_comments"
+                }, 
+                {
                     "include": "#comments"
                 }, 
                 {
@@ -204,12 +241,185 @@
                     "include": "#partial_and_var"
                 }
             ]
+        },
+        "inline_script": {
+            "begin": "(?:^\\s+)?(<)((?i:script))\\b(?:.*type=[\"'](?:text/x-handlebars-template|text/template)[\"'])(?![^>]*/>)",  
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.html"
+                }, 
+                "2": {
+                    "name": "entity.name.tag.script.html"
+                }
+            }, 
+            "end": "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?", 
+            "endCaptures": {
+                "2": {
+                    "name": "punctuation.definition.tag.html"
+                }
+            }, 
+            "name": "source.handlebars.embedded.html", 
+            "patterns": [
+                {
+                    "include": "#tag-stuff"
+                }, 
+                {
+                    "begin": "(?<!</(?:script|SCRIPT))(>)", 
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.html"
+                        }, 
+                        "2": {
+                            "name": "entity.name.tag.script.html"
+                        }
+                    }, 
+                    "end": "(</)((?i:script))", 
+                    "patterns": [
+                        {
+                            "include": "#block_comments"
+                        }, 
+                        {
+                            "include": "#comments"
+                        }, 
+                        {
+                            "include": "#block_helper"
+                        }, 
+                        {
+                            "include": "#end_block"
+                        }, 
+                        {
+                            "include": "#partial_and_var"
+                        }, 
+                        {
+                            "include": "text.html.basic"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tag_generic_attribute": {
+            "patterns": [
+                {
+                    "include": "#comments"
+                }, 
+                {
+                    "include": "#block_helper"
+                }, 
+                {
+                    "include": "#end_block"
+                }, 
+                {
+                    "include": "#partial_and_var"
+                }
+            ], 
+            "name": "entity.other.attribute-name.html", 
+            "match": "\\b([a-zA-Z0-9\\-:]+)"
+        }, 
+        "tag-id-attribute": {
+            "begin": "\\b(id)\\b\\s*(=)", 
+            "captures": {
+                "1": {
+                    "name": "entity.other.attribute-name.id.html"
+                }, 
+                "2": {
+                    "name": "punctuation.separator.key-value.html"
+                }
+            }, 
+            "end": "(?<='|\")", 
+            "name": "meta.attribute-with-value.id.html", 
+            "patterns": [
+                {
+                    "begin": "\"", 
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.begin.html"
+                        }
+                    }, 
+                    "contentName": "meta.toc-list.id.html", 
+                    "end": "\"", 
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.end.html"
+                        }
+                    }, 
+                    "name": "string.quoted.double.html", 
+                    "patterns": [
+                        {
+                            "include": "#block_comments"
+                        }, 
+                        {
+                            "include": "#comments"
+                        }, 
+                        {
+                            "include": "#block_helper"
+                        }, 
+                        {
+                            "include": "#end_block"
+                        }, 
+                        {
+                            "include": "#partial_and_var"
+                        }
+                    ]
+                }, 
+                {
+                    "begin": "'", 
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.begin.html"
+                        }
+                    }, 
+                    "contentName": "meta.toc-list.id.html", 
+                    "end": "'", 
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.end.html"
+                        }
+                    }, 
+                    "name": "string.quoted.single.html", 
+                    "patterns": [
+                        {
+                            "include": "#block_comments"
+                        }, 
+                        {
+                            "include": "#comments"
+                        }, 
+                        {
+                            "include": "#block_helper"
+                        }, 
+                        {
+                            "include": "#end_block"
+                        }, 
+                        {
+                            "include": "#partial_and_var"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        "tag-stuff": {
+            "patterns": [
+                {
+                    "include": "#tag-id-attribute"
+                }, 
+                {
+                    "include": "#tag-generic-attribute"
+                }, 
+                {
+                    "include": "#string-double-quoted"
+                }, 
+                {
+                    "include": "#string-single-quoted"
+                }
+            ]
         }
     }, 
     "scopeName": "text.html.handlebars", 
     "patterns": [
         {
             "include": "#yfm"
+        }, 
+        {
+            "include": "#block_comments"
         }, 
         {
             "include": "#comments"
@@ -223,6 +433,9 @@
         {
             "include": "#partial_and_var"
         }, 
+        {
+            "include": "#inline_script"
+        },
         {
             "include": "text.html.basic"
         }
