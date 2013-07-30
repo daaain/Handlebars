@@ -1,15 +1,36 @@
 <h2 class="{{class}}">Test</h2>
+
 {{#if showThis}}
 <p>Testing <strong>{{{testToken}}}</strong> {{#if otherCondition}}<strong>"{{otherTestToken}}"</strong> {{/if}}</p>
 {{else}}
 <p>'Thus spoke Zarathustra' – "ORLY?"</p>
-<p>Not that interesting.</p>
+
 <div class="{{class}}{{#if shouldBeRed}} red{{/if}}">
 	Test
 </div>
-{{!-- <p>Even less interesting.}} <p>No comment.</p>
+
+{{> yayPartial}}
+{{log "Look at me!"}}
+
+{{! TODO: advanced helper parameters }}
+{{customHelper "test1" "test2" 32 true object.value}}
+{{{link "See more..." href=story.url class="story"}}}
+
+{{! TODO: array notation }}
+{{#each articles.[10].[#comments]}}
+	<h1>{{subject}}</h1>
+	<div>
+	{{body}}
+	</div>
+{{/each}}
+
+<p>Not that interesting.</p>
+{{! <p>Even less interesting.}} <p>No comment.</p>
 {{!-- <p>Marginally less interesting. {{#if otherCondition}}<strong>"{{otherTestToken}}"</strong> {{/if}}</p> --}} <p>Nothing to see here.</p>
 {{!-- <p>Marginally less interesting. {{{testToken}}}</p> --}} <p>Move along.</p>
+{{! <!-- <h2 class="{{class}}">Test</h2> --> }}
+<!-- {{! <h2 class="{{class}}">Test</h2> }} -->
 {{/if}}
-{{! TODO }}
+
+{{! TODO: inline attributes }}
 <input type="checkbox" id="medication_taken" {{#if medication_taken}}checked{{/if}}>

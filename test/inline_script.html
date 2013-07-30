@@ -33,19 +33,30 @@ categories:
 			<div class="content_container">
 				{{{content}}}
 			</div>
+			
 			<div id="gallery">
 				{{#each content.galleryImages}}
 				<a href="{{../content.fullBaseUrl}}{{imageUrl}}">
 					<img src="{{../content.thumbBaseUrl}}{{imageUrl}}" />
 				</a>
 				{{/each}}
+
+				{{! TODO: @index and @key }}
+				{{#each array}}
+					{{@index}}: {{this}}
+				{{/each}}
+				{{#each object}}
+					{{@key}}: {{this}}
+				{{/each}}
 			</div>
+			
 			{{#if date}}
 			<h3 class="date">{{date}}</h3>
 			{{else}}
 			<h3 class="no_date">No date available.</h3>
 			{{/if}}
-			{{!-- <p>Not that interesting.}} <p>No comment.</p>
+			
+			{{! <p>Not that interesting.}} <p>No comment.</p>
 			{{!-- <p>Even less interesting. {{#if otherCondition}}<strong>"{{otherTestToken}}"</strong> {{/if}}</p> --}} <p>Nothing to see here.</p>
 			{{!-- <p>Marginally less interesting. {{{testToken}}}</p> --}} <p>Move along.</p>
 		</div>
