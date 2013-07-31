@@ -726,7 +726,7 @@
 		<key>inline_script</key>
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)((?i:script))\b(?:.*(type)=(["'](?:text/x-handlebars-template|text/template)["']))(?![^&gt;]*/&gt;)</string>
+			<string>(?:^\s+)?(&lt;)((?i:script))\b(?:.*(type)=(["'](?:text/x-handlebars-template|x-handlebars|text/template)["']))(?![^&gt;]*/&gt;)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
