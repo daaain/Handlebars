@@ -553,7 +553,7 @@
             ]
         },
         "inline_script": {
-            "begin": "(?:^\\s+)?(<)((?i:script))\\b(?:.*(type)=([\"'](?:text/x-handlebars-template|x-handlebars|text/template)[\"']))(?![^>]*/>)",  
+            "begin": "(?:^\\s+)?(<)((?i:script))\\b(?:.*(type)=([\"'](?:text/x-handlebars-template|text/x-handlebars|text/template)[\"']))(?![^>]*/>)",  
             "beginCaptures": {
                 "1": {
                     "name": "punctuation.definition.tag.html"
