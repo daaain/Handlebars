@@ -1,8 +1,9 @@
-# Sublime Text 2 Handlebars.js bundle
+# Sublime Text 2 / 3 Handlebars.js bundle
 
-- Colors of Handlebars expressions are selected to be in contrast with the surrounding HTML.
+- Colours of Handlebars expressions are selected to be in contrast with the surrounding HTML.
 - Handlebars expressions get syntax highlighting in HTML attributes.
 - Parameters passed to block expressions get syntax highlighting too.
+- Works both with individual template files and inline templates in script tags.
 - Key bindings for `{{! Handlebars comments }}`
 - Tab triggers for
   - `if` → `{{#if }}`
@@ -29,7 +30,7 @@ If you haven't used it yet, just install it from the link above and then:
 1. Press Shift + Command (or Control) + P
 2. Type "install", to bring up the "Package Control: Install Package" option, and press Enter
 3. Look for "Handlebars", and press Enter to install it.
-4. Choose "Handlebars" in the bottom right corner with one of your template files open
+4. Choose "Handlebars" in the bottom right corner with one of your template files open (or in case you have inline templates use Handlebars instead of HTML, it's gracefully extending it so you shouldn't lose anything)
 5. Profit
 
 Package Control will also auto-update the package from this point on!
