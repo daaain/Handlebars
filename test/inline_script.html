@@ -67,6 +67,10 @@ categories:
 			<div class="content_container">
 				{{{content}}}
 			</div>
+			{{#list nav id="nav-bar" class="top" bubbles=false}}
+				<a href="{{url}}">{{title}}</a>
+			{{/list}}
+			<button class="tiny button" {{action addToCampaign id="add-campaign" bubbles=false}}>Choose</button>
 	</script>
 
 	<script type="text/javascript">
