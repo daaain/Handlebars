@@ -82,7 +82,14 @@ categories:
 	<script type="text/template" id="template-small-third">
 		<div class="{{class}}" id="{{myId}}">
 			<div class="content_container">
-				{{{content}}}
+				{{! TODO: whitespace control }}
+				{{~foo~}}{{~foo}}{{foo~}}
+				{{~&foo~}}{{~{foo}~}}
+				{{~#if foo~}} bar {{~/if~}}
+				{{~^if foo~}} bar {{~/if~}}
+				{{#if foo~}} bar {{~^~}} baz {{~/if}}
+				{{#if foo~}} bar {{~else~}} baz {{~/if}}
+				foo {{~> dude~}} {{> dude~}}
 			</div>
 	</script>
 </body>
