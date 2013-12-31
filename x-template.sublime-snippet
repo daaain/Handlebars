@@ -1,5 +1,5 @@
 <snippet>
-  <content><![CDATA[<script type="text/x-handlebars-template" data-template-name="$1">
+  <content><![CDATA[<script type="text/x-handlebars" data-template-name="$1">
     $0
 </script>]]></content>
   <tabTrigger>x-temp</tabTrigger>
