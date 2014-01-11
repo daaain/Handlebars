@@ -70,7 +70,12 @@ categories:
 			{{#list nav id="nav-bar" class="top" bubbles=false}}
 				<a href="{{url}}">{{title}}</a>
 			{{/list}}
+			{{! TODO: binding attributes }}
 			<button class="tiny button" {{action addToCampaign id="add-campaign" bubbles=false}}>Choose</button>
+			<p class="{{class}}">Filler</p>
+			<a class="pull-left" {{bind-attr href=link}}>
+				<img {{bind-attr src=this.thumbLink alt=this.name}} class="media-object">
+			</a>
 	</script>
 
 	<script type="text/javascript">
