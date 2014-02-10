@@ -44,7 +44,7 @@ If you want to work on the package you should install AAAPackageDev either [from
 
 The nicest development setup I found so far is to have the package installed via Package Control and then symlinking the development Git repo to `Sublime settings folder > Packages`, which then overrides the installed one so you can toggle between them easily.
 
-Another great trick I found out about recently is the `Show scope name` shortcut (Shift + Control + P (OSX) or Shift + Control + Alt + P (Windows)) which will display the language scope on the status bar based on where your cursor is.
+Another great trick I found out about recently is the `Show scope name` shortcut (Shift + Control + P (OSX) or Shift + Control + Alt + P (Windows)) which will display the language scope on the status bar based on where your cursor is. If you're getting tired of pressing all these keys all the time, there is a brilliant little package which does this automatically called [ScopeAlways](https://sublime.wbond.net/packages/ScopeAlways).
 
 ## Precompilation
 
