@@ -635,7 +635,7 @@
                 }
             ], 
             "name": "entity.other.attribute-name.html", 
-            "end": "(?<='|\")" 
+            "end": "(?<='|\"|)"
         }, 
         "tag_id_attribute": {
             "begin": "\\b(id)\\b\\s*(=)", 
@@ -647,7 +647,7 @@
                     "name": "punctuation.separator.key-value.html"
                 }
             }, 
-            "end": "(?<='|\")", 
+            "end": "(?<='|\"|)",
             "name": "meta.attribute-with-value.id.html", 
             "patterns": [
                 {
