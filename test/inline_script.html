@@ -41,7 +41,6 @@ categories:
 				</a>
 				{{/each}}
 
-				{{! TODO: @index and @key }}
 				{{#each array}}
 					{{@index}}: {{this}}
 				{{/each}}
@@ -70,7 +69,6 @@ categories:
 			{{#list nav id="nav-bar" class="top" bubbles=false}}
 				<a href="{{url}}">{{title}}</a>
 			{{/list}}
-			{{! TODO: binding attributes }}
 			<button class="tiny button" {{action addToCampaign id="add-campaign" bubbles=false}}>Choose</button>
 			<p class="{{class}}">Filler</p>
 			<a class="pull-left" {{bind-attr href=link}}>
