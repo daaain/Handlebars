@@ -233,7 +233,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.function.block.end.handlebars.sproutcore</string>
+			<string>meta.function.block.end.handlebars</string>
 			<key>patterns</key>
 			<array/>
 		</dict>

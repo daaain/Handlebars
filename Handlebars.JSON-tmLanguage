@@ -314,7 +314,7 @@
         "end_block": {
             "begin": "(\\{\\{/)([a-zA-Z0-9_\\.-]+)\\s*", 
             "end": "(\\}\\})", 
-            "name": "meta.function.block.end.handlebars.sproutcore", 
+            "name": "meta.function.block.end.handlebars", 
             "endCaptures": {
                 "1": {
                     "name": "support.constant.handlebars"
