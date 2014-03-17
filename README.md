@@ -38,13 +38,20 @@ Package Control will also auto-update the package from this point on!
 
 ## Testing / contribution
 
+I've recently stopped using Handlebars at my day job and became a father, so any contributions are more than welcome! I'm still using Github so will make sure to keep on being responsive on issues and pull requests.
+
 There are some sample templates in `test/` folder. It's possible to see the different supported and yet to be implemented use cases there.
 
 If you want to work on the package you should install AAAPackageDev either [from Github](https://github.com/SublimeText/AAAPackageDev) or from Package Control. With that you can edit the JSON version (`Handlebars.JSON-tmLanguage`) and let it export the Plist with the ST Build System.
 
 The nicest development setup I found so far is to have the package installed via Package Control and then symlinking the development Git repo to `Sublime settings folder > Packages`, which then overrides the installed one so you can toggle between them easily.
 
-Another great trick I found out about recently is the `Show scope name` shortcut (Shift + Control + P (OSX) or Shift + Control + Alt + P (Windows)) which will display the language scope on the status bar based on where your cursor is. If you're getting tired of pressing all these keys all the time, there is a brilliant little package which does this automatically called [ScopeAlways](https://sublime.wbond.net/packages/ScopeAlways).
+Another great trick I found out about recently is the `Show scope name` shortcut (Shift + Control + P (OSX) or Shift + Control + Alt + P (Windows)) which will display the language scope on the status bar based on where your cursor is. If you're getting tired of pressing all these keys all the time, there are a few brilliant packages which do this automatically like the more subtle [ScopeAlways](https://sublime.wbond.net/packages/ScopeAlways) or the full on [ScopeHunter](https://sublime.wbond.net/packages/ScopeHunter) – note: both need to be activated via the Command Palette.
+
+Resources on ST / Textmate syntax definitions:
+
+http://docs.sublimetext.info/en/latest/extensibility/syntaxdefs.html
+http://manual.macromates.com/en/language_grammars
 
 ## Precompilation
 
@@ -57,6 +64,8 @@ There are of course Node.js / Grunt based compilers too ([like this](https://npm
 ## Credits
 
 Adapted from the great [sublime-text-handlebars](https://github.com/nrw/sublime-text-handlebars) package by Nicholas Westlake.
+
+Thanks a lot to all the generous contributors (in alphabetical order): bittersweetryan, bradcliffe, calumbrodie, jonschlinkert, Krutius, samselikoff, utkarshkukreti
 
 ## License
 
