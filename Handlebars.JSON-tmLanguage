@@ -312,8 +312,8 @@
             ]
         }, 
         "end_block": {
-            "begin": "(\\{\\{/)([a-zA-Z0-9_\\.-]+)\\s*", 
-            "end": "(\\}\\})", 
+            "begin": "(\\{\\{~?/)([a-zA-Z0-9_\\.-]+)\\s*",
+            "end": "(~?\\}\\})",
             "name": "meta.function.block.end.handlebars", 
             "endCaptures": {
                 "1": {
@@ -433,8 +433,8 @@
             ]
         }, 
         "block_helper": {
-            "begin": "(\\{\\{\\#)([-a-zA-Z0-9_\\./]+)\\s+(@?[-a-zA-Z0-9_\\./]+)*",
-            "end": "(\\}\\})", 
+            "begin": "(\\{\\{~?\\#)([-a-zA-Z0-9_\\./]+)\\s+(@?[-a-zA-Z0-9_\\./]+)*",
+            "end": "(~?\\}\\})",
             "name": "meta.function.block.start.handlebars", 
             "endCaptures": {
                 "1": {
@@ -494,8 +494,8 @@
             ]
         }, 
         "partial_and_var": {
-            "begin": "(\\{\\{\\{*>*)\\s*(@?[-a-zA-Z0-9_\\./]+)*",
-            "end": "(\\}\\}\\}*)", 
+            "begin": "(\\{\\{~?\\{*>*)\\s*(@?[-a-zA-Z0-9_\\./]+)*",
+            "end": "(~?\\}\\}\\}*)",
             "name": "meta.function.inline.other.handlebars", 
             "endCaptures": {
                 "1": {
