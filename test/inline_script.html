@@ -28,6 +28,18 @@ categories:
 		console.log('Bi-winning');
 	</script>
 
+	<div data-container="draggable"></div>
+
+	<div data-attribute_weird="yes"></div>
+
+	<script data-partial="nav" type="text/x-handlebars-template">
+		<ul>
+			{{#each route}}
+				<li><button data-app-route="{{ path }}">{{{ name }}}</button></li>
+			{{/each}}
+		</ul>
+	</script>
+
 	<script type="text/x-handlebars-template" id="template-gallery">
 		<div class="{{class}}" id="{{myId}}">
 			<div class="content_container">
