@@ -5,6 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>handlebars</string>
+		<string>handlebars.html</string>
 		<string>hbr</string>
 		<string>hbrs</string>
 		<string>hbs</string>

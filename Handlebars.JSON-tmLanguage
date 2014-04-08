@@ -706,6 +706,7 @@
     ], 
     "fileTypes": [
         "handlebars", 
+        "handlebars.html", 
         "hbr", 
         "hbrs", 
         "hbs", 
