@@ -356,7 +356,7 @@
                             "include": "#comments"
                         }
                     ], 
-                    "begin": "\\{\\{!", 
+                    "begin": "\\{\\{![^<]", 
                     "end": "\\}\\}", 
                     "name": "comment.block.handlebars"
                 }, 
@@ -494,7 +494,7 @@
             ]
         }, 
         "partial_and_var": {
-            "begin": "(\\{\\{~?\\{*>*)\\s*(@?[-a-zA-Z0-9_\\./]+)*",
+            "begin": "(\\{\\{~?\\{*(>|!<)*)\\s*(@?[-a-zA-Z0-9_\\./]+)*",
             "end": "(~?\\}\\}\\}*)",
             "name": "meta.function.inline.other.handlebars", 
             "endCaptures": {
@@ -506,7 +506,7 @@
                 "1": {
                     "name": "support.constant.handlebars"
                 }, 
-                "2": {
+                "3": {
                     "name": "variable.parameter.handlebars"
                 }
             }, 
