@@ -160,7 +160,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\{\{!</string>
+					<string>\{\{![^&lt;]</string>
 					<key>end</key>
 					<string>\}\}</string>
 					<key>name</key>
@@ -819,7 +819,7 @@
 		<key>partial_and_var</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{~?\{*&gt;*)\s*(@?[-a-zA-Z0-9_\./]+)*</string>
+			<string>(\{\{~?\{*(&gt;|!&lt;)*)\s*(@?[-a-zA-Z0-9_\./]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -827,7 +827,7 @@
 					<key>name</key>
 					<string>support.constant.handlebars</string>
 				</dict>
-				<key>2</key>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>variable.parameter.handlebars</string>
