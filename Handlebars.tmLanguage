@@ -973,6 +973,26 @@
 					<key>include</key>
 					<string>#string-single-quoted</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#block_comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#block_helper</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#end_block</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#partial_and_var</string>
+				</dict>
 			</array>
 		</dict>
 		<key>tag_generic_attribute</key>
