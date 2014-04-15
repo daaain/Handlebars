@@ -670,6 +670,21 @@
                 }, 
                 {
                     "include": "#string-single-quoted"
+                }, 
+                {
+                    "include": "#block_comments"
+                }, 
+                {
+                    "include": "#comments"
+                }, 
+                {
+                    "include": "#block_helper"
+                }, 
+                {
+                    "include": "#end_block"
+                }, 
+                {
+                    "include": "#partial_and_var"
                 }
             ]
         }
