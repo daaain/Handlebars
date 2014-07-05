@@ -35,3 +35,10 @@
 
 {{! inline attributes }}
 <input type="checkbox" id="medication_taken" {{#if medication_taken}}checked{{/if}}>
+
+{{! Ember ArrayController implicit each loop }}
+<ul>
+  {{#each}}
+    <li>{{name}} by {{artist}}</li>
+  {{/each}}
+</ul>

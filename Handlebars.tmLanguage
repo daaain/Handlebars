@@ -111,7 +111,7 @@
 		<key>block_helper</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{~?\#)([-a-zA-Z0-9_\./]+)\s+(@?[-a-zA-Z0-9_\./]+)*</string>
+			<string>(\{\{~?\#)([-a-zA-Z0-9_\./]+)\s?+(@?[-a-zA-Z0-9_\./]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
