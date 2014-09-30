@@ -146,11 +146,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#string-single-quoted</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-double-quoted</string>
+					<string>#string</string>
 				</dict>
 			</array>
 		</dict>
@@ -269,6 +265,20 @@
 				</dict>
 			</array>
 		</dict>
+		<key>escaped-double-quote</key>
+		<dict>
+			<key>match</key>
+			<string>\\"</string>
+			<key>name</key>
+			<string>constant.character.escape.js</string>
+		</dict>
+		<key>escaped-single-quote</key>
+		<dict>
+			<key>match</key>
+			<string>\\'</string>
+			<key>name</key>
+			<string>constant.character.escape.js</string>
+		</dict>
 		<key>html_tags</key>
 		<dict>
 			<key>patterns</key>
@@ -352,11 +362,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#string-double-quoted</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#string-single-quoted</string>
+							<string>#string</string>
 						</dict>
 					</array>
 				</dict>
@@ -849,6 +855,16 @@
 			<array>
 				<dict>
 					<key>include</key>
+					<string>#string</string>
+				</dict>
+			</array>
+		</dict>
+		<key>string</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
 					<string>#string-single-quoted</string>
 				</dict>
 				<dict>
@@ -883,6 +899,10 @@
 			<string>string.quoted.double.handlebars</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#escaped-double-quote</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#block_comments</string>
@@ -933,6 +953,10 @@
 			<array>
 				<dict>
 					<key>include</key>
+					<string>#escaped-single-quote</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#block_comments</string>
 				</dict>
 				<dict>
@@ -967,11 +991,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#string-double-quoted</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-single-quoted</string>
+					<string>#string</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1020,11 +1040,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#string-single-quoted</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-double-quoted</string>
+					<string>#string</string>
 				</dict>
 			</array>
 		</dict>
@@ -1053,11 +1069,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#string-single-quoted</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-double-quoted</string>
+					<string>#string</string>
 				</dict>
 			</array>
 		</dict>

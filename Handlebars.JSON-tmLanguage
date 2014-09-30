@@ -52,10 +52,7 @@
                             "include": "#tag-generic-attribute"
                         }, 
                         {
-                            "include": "#string-double-quoted"
-                        }, 
-                        {
-                            "include": "#string-single-quoted"
+                            "include": "#string"
                         }
                     ]
                 }, 
@@ -454,10 +451,7 @@
             }, 
             "patterns": [
                 {
-                    "include": "#string-single-quoted"
-                }, 
-                {
-                    "include": "#string-double-quoted"
+                    "include": "#string"
                 }
             ]
         }, 
@@ -477,6 +471,9 @@
             }, 
             "patterns": [
                 {
+                    "include": "#escaped-single-quote"
+                },
+                {
                     "include": "#block_comments"
                 }, 
                 {
@@ -493,15 +490,28 @@
                 }
             ]
         }, 
+        "string": {
+            "patterns": [
+                {
+                    "include": "#string-single-quoted"
+                },
+                {
+                    "include": "#string-double-quoted"
+                }
+            ]
+        },
+        "escaped-single-quote": {
+            "name": "constant.character.escape.js",
+            "match": "\\\\'"
+        },
+        "escaped-double-quote": {
+            "name": "constant.character.escape.js",
+            "match": "\\\\\""
+        },
         "partial_and_var": {
             "begin": "(\\{\\{~?\\{*(>|!<)*)\\s*(@?[-a-zA-Z0-9_\\./]+)*",
             "end": "(~?\\}\\}\\}*)",
             "name": "meta.function.inline.other.handlebars", 
-            "endCaptures": {
-                "1": {
-                    "name": "support.constant.handlebars"
-                }
-            }, 
             "beginCaptures": {
                 "1": {
                     "name": "support.constant.handlebars"
@@ -510,12 +520,14 @@
                     "name": "variable.parameter.handlebars"
                 }
             }, 
+            "endCaptures": {
+                "1": {
+                    "name": "support.constant.handlebars"
+                }
+            },
             "patterns": [
                 {
-                    "include": "#string-single-quoted"
-                }, 
-                {
-                    "include": "#string-double-quoted"
+                    "include": "#string"
                 }
             ]
         }, 
@@ -523,17 +535,20 @@
             "begin": "\"", 
             "end": "\"", 
             "name": "string.quoted.double.handlebars", 
-            "endCaptures": {
-                "0": {
-                    "name": "punctuation.definition.string.end.html"
-                }
-            }, 
             "beginCaptures": {
                 "0": {
                     "name": "punctuation.definition.string.begin.html"
                 }
             }, 
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.html"
+                }
+            }, 
             "patterns": [
+                {
+                    "include": "#escaped-double-quote"
+                }, 
                 {
                     "include": "#block_comments"
                 }, 
@@ -627,10 +642,7 @@
             }, 
             "patterns": [
                 {
-                    "include": "#string-single-quoted"
-                }, 
-                {
-                    "include": "#string-double-quoted"
+                    "include": "#string"
                 }
             ], 
             "name": "entity.other.attribute-name.html", 
@@ -650,10 +662,7 @@
             "name": "meta.attribute-with-value.id.html", 
             "patterns": [
                 {
-                    "include": "#string-single-quoted"
-                }, 
-                {
-                    "include": "#string-double-quoted"
+                    "include": "#string"
                 }
             ]
         }, 
@@ -666,10 +675,7 @@
                     "include": "#tag_generic_attribute"
                 }, 
                 {
-                    "include": "#string-double-quoted"
-                }, 
-                {
-                    "include": "#string-single-quoted"
+                    "include": "#string"
                 }, 
                 {
                     "include": "#block_comments"

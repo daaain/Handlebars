@@ -14,8 +14,10 @@
 {{log "Look at me!"}}
 
 {{! TODO: advanced helper parameters }}
-{{customHelper "test1" "test2" 32 true object.value}}
-{{{link "See more..." href=story.url class="story"}}}
+{{customHelper "test1" 'test2' 32 true object.value}}
+{{{link "See more..." href=story.url class="story" foo='bar'}}}
+{{customHelper 'test-single-quote-escaped\''}}
+{{customHelper "test-double-quote-escaped\""}}
 
 {{! TODO: array notation }}
 {{#each articles.[10].[#comments]}}
