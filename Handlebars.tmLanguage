@@ -681,7 +681,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&lt;/?)([a-zA-Z0-9:]+)</string>
+					<string>(&lt;/?)([a-zA-Z0-9:-]+)</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
