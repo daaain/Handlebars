@@ -708,6 +708,34 @@
 					</array>
 				</dict>
 				<dict>
+					<key>begin</key>
+					<string>(&lt;/?)([a-zA-Z0-9:-{}]+)</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.tokenised.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(&gt;)</string>
+					<key>name</key>
+					<string>meta.tag.tokenised.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#tag-stuff</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
 					<key>include</key>
 					<string>#entities</string>
 				</dict>

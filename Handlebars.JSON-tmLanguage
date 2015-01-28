@@ -276,6 +276,24 @@
                     ]
                 }, 
                 {
+                    "begin": "(</?)([a-zA-Z0-9:-{}]+)", 
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.html"
+                        }, 
+                        "2": {
+                            "name": "entity.name.tag.tokenised.html"
+                        }
+                    }, 
+                    "end": "(>)", 
+                    "name": "meta.tag.tokenised.html", 
+                    "patterns": [
+                        {
+                            "include": "#tag-stuff"
+                        }
+                    ]
+                }, 
+                {
                     "include": "#entities"
                 }, 
                 {
