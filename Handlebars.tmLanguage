@@ -9,7 +9,11 @@
 		<string>hbr</string>
 		<string>hbrs</string>
 		<string>hbs</string>
+		<string>hdbs</string>
+		<string>hjs</string>
+		<string>mu</string>
 		<string>mustache</string>
+		<string>stache</string>
 		<string>template</string>
 		<string>tmpl</string>
 	</array>

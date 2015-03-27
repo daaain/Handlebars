@@ -758,7 +758,11 @@
         "hbr",
         "hbrs",
         "hbs",
+        "hdbs",
+        "hjs",
+        "mu",
         "mustache",
+        "stache",
         "template",
         "tmpl"
     ],
