@@ -448,7 +448,7 @@
             ]
         }, 
         "block_helper": {
-            "begin": "(\\{\\{~?\\#)([-a-zA-Z0-9_\\./]+)\\s?+(@?[-a-zA-Z0-9_\\./]+)*",
+            "begin": "(\\{\\{~?\\#)([-a-zA-Z0-9_\\./]+)\\s?(@?[-a-zA-Z0-9_\\./]+)*\\s?(@?[-a-zA-Z0-9_\\./]+)*\\s?(@?[-a-zA-Z0-9_\\./]+)*",
             "end": "(~?\\}\\})",
             "name": "meta.function.block.start.handlebars", 
             "endCaptures": {
@@ -459,11 +459,20 @@
             "beginCaptures": {
                 "1": {
                     "name": "support.constant.handlebars"
-                }, 
+                },
+                "2": {
+                    "name": "support.constant.handlebars"
+                },
                 "3": {
                     "name": "variable.parameter.handlebars"
-                }, 
-                "2": {
+                },
+                "4": {
+                    "name": "support.constant.handlebars"
+                },
+                "5": {
+                    "name": "variable.parameter.handlebars"
+                },
+                "6": {
                     "name": "support.constant.handlebars"
                 }
             }, 

@@ -10,7 +10,7 @@
 	<{{tag}} attr="asdf">asdf</{{tag}}>
 </div>
 
-{{> yayPartial}}
+{{> yayPartial customData='FoolBar'}}
 {{!< GhostStyleExtend}}
 {{log "Look at me!"}}
 
@@ -45,3 +45,8 @@
     <li>{{name}} by {{artist}}</li>
   {{/each}}
 </ul>
+
+{{! with ... as }}
+{{#with foo as bar}}
+  <li>{{name}} by {{artist}}</li>
+{{/with}}
