@@ -1,11 +1,11 @@
-# Sublime Text 2 / 3 Handlebars.js bundle
+# Atom and Sublime Text 2 / 3 Handlebars.js bundle
 
 - Colours of Handlebars expressions are selected to be in contrast with the surrounding HTML.
 - Handlebars expressions get syntax highlighting in HTML attributes.
 - Parameters passed to block expressions get syntax highlighting too.
 - Works both with individual template files and inline templates in script tags.
-- Key bindings for `{{! Handlebars comments }}`
-- Tab triggers for
+- Key bindings for `{{! Handlebars comments }}` (Sublime only)
+- Tab triggers (Sublime only) for
   - `if` → `{{#if }}`
   - `ifel` → `{{#if }} {{else}}`
   - `el` → `{{else}}`
@@ -18,11 +18,11 @@
 
 ## About Handlebars.js
 
-It's a great JavaScript templating engine, based on [Mustache](http://mustache.github.com/), but adding the ability to precompile templates and to create custom helpers.
+It's a great JavaScript templating engine, based on [Mustache](http://mustache.github.com/), but amongst others adding the ability to precompile templates and to create custom helpers.
 
 Official website: [handlebarsjs.com](http://handlebarsjs.com/)
 
-## Installation
+## Sublime Text installation
 
 Get it through [Sublime Package Control](http://wbond.net/sublime_packages/package_control).
 
@@ -36,11 +36,19 @@ If you haven't used it yet, just install it from the link above and then:
 
 Package Control will also auto-update the package from this point on!
 
+## Atom installation
+
+1. Open Preferences > Install
+2. Type "Handlebars" into the search field
+3. Click the Install button
+
 ## Testing / contribution
 
-I've recently stopped using Handlebars at my day job and became a father, so any contributions are more than welcome! I'm still using Github so will make sure to keep on being responsive on issues and pull requests.
+I've recently stopped heavily using Handlebars at my day job and became a father, so any contributions are more than welcome! I'm still using Github so will make sure to keep on being responsive on issues and pull requests.
 
 There are some sample templates in `test/` folder. It's possible to see the different supported and yet to be implemented use cases there.
+
+### Sublime Text
 
 If you want to work on the package you should install AAAPackageDev either [from Github](https://github.com/SublimeText/AAAPackageDev) or from Package Control. With that you can edit the JSON version (`Handlebars.JSON-tmLanguage`) and let it export the Plist with the ST Build System.
 
@@ -53,19 +61,24 @@ Resources on ST / Textmate syntax definitions:
 http://docs.sublimetext.info/en/latest/extensibility/syntaxdefs.html
 http://manual.macromates.com/en/language_grammars
 
+### Atom
+
+TODO: add contribution notes
+TODO: add proper testing based on https://github.com/atom/language-mustache
+
 ## Precompilation
 
 This package does not offer any Handlebars precompilation functionality to keep things simple, but you can use [Guard](https://github.com/guard/guard) (which is a file system watcher) and [Guard-Steering](https://github.com/guard/guard-steering) (a Handlebars precompiler from yours truly) to have all templates precompiled as you save them.
 
 There's also a [Guard package for Sublime](https://github.com/cyphactor/sublime_guard) if you want integration, but I don't personally use this as I'm happy with Guard running in an iTerm window I can access from anywhere.
 
-There are of course Node.js / Grunt based compilers too ([like this](https://npmjs.org/package/grunt-handlebars-js)), but I haven't personally used any yet.
+There are of course Node.js / Grunt / Gulp based compilers too ([like this](https://npmjs.org/package/grunt-handlebars-js) and [this](https://www.npmjs.com/package/gulp-compile-handlebars)), but I haven't personally used any yet for precompilation.
 
 ## Credits
 
 Adapted from the great [sublime-text-handlebars](https://github.com/nrw/sublime-text-handlebars) package by Nicholas Westlake.
 
-Thanks a lot to all the generous contributors (in alphabetical order): bittersweetryan, bradcliffe, calumbrodie, jonschlinkert, Krutius, samselikoff, utkarshkukreti
+Thanks a lot to all the generous contributors (in alphabetical order): @bittersweetryan, @bradcliffe, @calumbrodie, @duncanbeevers, @hlvnst, @jonschlinkert, @Krutius, @samselikoff, @utkarshkukreti, @zeppelin
 
 ## License
 

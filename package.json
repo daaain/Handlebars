@@ -1,0 +1,11 @@
+{
+  "name": "Handlebars",
+  "version": "0.0.0",
+  "description": "Handlebars for Atom",
+  "repository": "https://github.com/daaain/Handlebars",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {}
+}
