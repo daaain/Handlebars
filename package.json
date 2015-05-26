@@ -1,6 +1,6 @@
 {
   "name": "Handlebars",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Fullest Handlebars syntax support for Atom",
   "repository": "https://github.com/daaain/Handlebars",
   "license": "MIT",
