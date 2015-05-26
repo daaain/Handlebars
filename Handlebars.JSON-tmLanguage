@@ -558,6 +558,21 @@
                 }
             ]
         },
+        "else_token": {
+            "begin": "(\\{\\{~?else)",
+            "end": "(~?\\}\\}\\}*)",
+            "name": "meta.function.inline.else.handlebars",
+            "beginCaptures": {
+                "1": {
+                    "name": "support.constant.handlebars"
+                }
+            },
+            "endCaptures": {
+                "1": {
+                    "name": "support.constant.handlebars"
+                }
+            }
+        },
         "string-double-quoted": {
             "begin": "\"",
             "end": "\"",
@@ -645,6 +660,9 @@
                             "include": "#end_block"
                         },
                         {
+                            "include": "#else_token"
+                        },
+                        {
                             "include": "#partial_and_var"
                         },
                         {
@@ -717,6 +735,9 @@
                     "include": "#end_block"
                 },
                 {
+                    "include": "#else_token"
+                },
+                {
                     "include": "#partial_and_var"
                 }
             ]
@@ -738,6 +759,9 @@
         },
         {
             "include": "#end_block"
+        },
+        {
+            "include": "#else_token"
         },
         {
             "include": "#partial_and_var"

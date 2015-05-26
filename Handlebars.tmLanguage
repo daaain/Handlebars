@@ -43,6 +43,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#else_token</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#partial_and_var</string>
 		</dict>
 		<dict>
@@ -220,6 +224,31 @@
 					</array>
 				</dict>
 			</array>
+		</dict>
+		<key>else_token</key>
+		<dict>
+			<key>begin</key>
+			<string>(\{\{~?else)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.handlebars</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(~?\}\}\}*)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.handlebars</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.function.inline.else.handlebars</string>
 		</dict>
 		<key>end_block</key>
 		<dict>
@@ -855,6 +884,10 @@
 						</dict>
 						<dict>
 							<key>include</key>
+							<string>#else_token</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#partial_and_var</string>
 						</dict>
 						<dict>
@@ -1055,6 +1088,10 @@
 				<dict>
 					<key>include</key>
 					<string>#end_block</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#else_token</string>
 				</dict>
 				<dict>
 					<key>include</key>
