@@ -63,6 +63,19 @@ http://manual.macromates.com/en/language_grammars
 
 ### Atom
 
+To see what scope Atom detects under the keyboard cursor, open the console (alt+cmd+i) and first create these
+
+```
+editor = atom.workspace.getActiveTextEditor();
+cursor = editor.getLastCursor();
+```
+
+Then you can:
+
+```
+cursor.getScopeDescriptor();
+```
+
 TODO: add contribution notes
 TODO: add proper testing based on https://github.com/atom/language-mustache
 
