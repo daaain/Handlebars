@@ -276,7 +276,7 @@
                     ]
                 },
                 {
-                    "begin": "(</?)([a-zA-Z0-9:-{}]+)",
+                    "begin": "(</?)([a-zA-Z0-9{}:-]+)",
                     "captures": {
                         "1": {
                             "name": "punctuation.definition.tag.html"
