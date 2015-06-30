@@ -510,6 +510,9 @@
                     "include": "#block_helper"
                 },
                 {
+                    "include": "#else_token"
+                },
+                {
                     "include": "#end_block"
                 },
                 {
@@ -599,6 +602,9 @@
                 },
                 {
                     "include": "#block_helper"
+                },
+                {
+                    "include": "#else_token"
                 },
                 {
                     "include": "#end_block"

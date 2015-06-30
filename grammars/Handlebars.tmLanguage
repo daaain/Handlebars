@@ -997,6 +997,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#else_token</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#end_block</string>
 				</dict>
 				<dict>
@@ -1046,6 +1050,10 @@
 				<dict>
 					<key>include</key>
 					<string>#block_helper</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#else_token</string>
 				</dict>
 				<dict>
 					<key>include</key>

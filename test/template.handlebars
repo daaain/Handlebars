@@ -8,6 +8,7 @@
 <div class="{{class}}{{#if shouldBeRed}} red{{/if}}">
 	<custom-element>Test</custom-element>
 	<{{tag}} attr="asdf">asdf</{{tag}}>
+	<input name="{{noCaps name}}" placeholder="{{#unless placeholder}}{{name}}{{else}}{{placeholder}}{{/unless}}" type="text"/>
 </div>
 
 {{> yayPartial customData='FoolBar'}}
