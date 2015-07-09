@@ -2,7 +2,7 @@
   <content><![CDATA[{{#each ${1}}}
 ${0}
 {{/each}}]]></content>
-  <tabTrigger>each</tabTrigger>
+  <tabTrigger>ea</tabTrigger>
   <scope>text.html.handlebars,text.html.basic source.js.embedded.html, text.html.twig source.js.embedded.html</scope>
   <description>each(handlebars)</description>
 </snippet>

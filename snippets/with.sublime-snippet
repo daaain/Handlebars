@@ -2,7 +2,7 @@
   <content><![CDATA[{{#with ${1}}}
 ${0}
 {{/with}}]]></content>
-  <tabTrigger>with</tabTrigger>
+  <tabTrigger>wi</tabTrigger>
   <scope>text.html.handlebars,text.html.basic source.js.embedded.html, text.html.twig source.js.embedded.html</scope>
   <description>with(handlebars)</description>
 </snippet>

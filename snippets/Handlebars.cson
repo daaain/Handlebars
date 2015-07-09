@@ -1,0 +1,28 @@
+'.text.html.handlebars':
+  'each (handlebars)':
+    'prefix': 'ea'
+    'body': '{{#each ${1}}}\n\t${0}\n{{/each}}'
+  'else (handlebars)':
+    'prefix': 'el'
+    'body': '{{else}}'
+  'if (handlebars)':
+    'prefix': 'if'
+    'body': '{{#if ${1}}}\n\t${0}\n{{/if}}'
+  'if else (handlebars)':
+    'prefix': 'ifel'
+    'body': '{{#if ${2}}}\n\t${1}\n{{else}}\n\t${0}\n{{/if}}'
+  'partial (handlebars)':
+    'prefix': 'par'
+    'body': '{{> ${0}}}'
+  'unless (handlebars)':
+    'prefix': 'un'
+    'body': '{{#unless ${1}}}\n\t${0}\n{{/unless}}'
+  'with (handlebars)':
+    'prefix': 'wi'
+    'body': '{{#with ${1}}}\n\t${0}\n{{/with}}'
+  'template (id)':
+    'prefix': 'x-id'
+    'body': '<script type="text/x-handlebars-template" id="$1">\n\t$0\n</script>'
+  'template (data-template-name)':
+    'prefix': 'x-temp'
+    'body': '<script type="text/x-handlebars" data-template-name="$1">\n\t$0\n</script>'
