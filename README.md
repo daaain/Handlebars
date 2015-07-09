@@ -10,8 +10,8 @@
   - `ifel` → `{{#if }} {{else}}`
   - `el` → `{{else}}`
   - `un` → `{{#unless }}`
-  - `each` → `{{#each }}`
-  - `with` → `{{#with }}`
+  - `ea` → `{{#each }}`
+  - `wi` → `{{#with }}`
   - `par` → `{{> }}` (for partials)
   - `x-temp` → `<script type="text/x-handlebars" data-template-name="$1">` (inline script tag in HTML files using the Ember recommended `data-template-name` attribute)
   - `x-id` → `<script type="text/x-handlebars-template" id="$1">` (inline script tag in HTML files using the legacy `id` attribute)
@@ -63,18 +63,7 @@ http://manual.macromates.com/en/language_grammars
 
 ### Atom
 
-To see what scope Atom detects under the keyboard cursor, open the console (alt+cmd+i) and first create these:
-
-```
-editor = atom.workspace.getActiveTextEditor();
-cursor = editor.getLastCursor();
-```
-
-Then you can:
-
-```
-cursor.getScopeDescriptor();
-```
+To see what scope Atom detects under the keyboard cursor, press Option + Cmd + P.
 
 TODO: add contribution notes  
 TODO: add proper testing based on https://github.com/atom/language-mustache
