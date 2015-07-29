@@ -5,7 +5,7 @@
 - Parameters passed to block expressions get syntax highlighting too.
 - Works both with individual template files and inline templates in script tags.
 - Key bindings for `{{! Handlebars comments }}` (Sublime only)
-- Tab triggers (Sublime only) for
+- Tab triggers for
   - `if` → `{{#if }}`
   - `ifel` → `{{#if }} {{else}}`
   - `el` → `{{else}}`
@@ -50,7 +50,7 @@ There are some sample templates in `test/` folder. It's possible to see the diff
 
 ### Sublime Text
 
-If you want to work on the package you should install AAAPackageDev either [from Github](https://github.com/SublimeText/AAAPackageDev) or from Package Control. With that you can edit the JSON version (`Handlebars.JSON-tmLanguage`) and let it export the Plist with the ST Build System.
+If you want to work on the package you should install AAAPackageDev either [from Github](https://github.com/SublimeText/AAAPackageDev) or from Package Control. With that you can edit the JSON version (`grammars/Handlebars.json`) and let it export the Plist (`grammars/Handlebars.tmLanguage`) with the ST Build System.
 
 The nicest development setup I found so far is to have the package installed via Package Control and then symlinking the development Git repo to `Sublime settings folder > Packages`, which then overrides the installed one so you can toggle between them easily.
 

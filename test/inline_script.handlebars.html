@@ -112,6 +112,15 @@ categories:
 				foo {{~> dude~}} {{> dude~}}
 			</div>
 	</script>
+
+	<!-- escaped mustaches -->
+	<script id="template" type="text/x-handlebars">
+	\{{#with foo}}
+		\{{bar}}
+
+		{{baz}}
+	\{{/with}}
+	</script>
 </body>
 
 </html>
