@@ -45,7 +45,14 @@ Package Control will also auto-update the package from this point on!
 
 ## Known problems and workarounds
 
-### `.sublime-build` in the build system menu
+
+### No auto-complete on closing HTML tags ([#49](https://github.com/daaain/Handlebars/issues/49))
+
+**Problem**: when closing an HTML tag, the tag name doesn't get auto-completed after typing `/`, even though this is the default behaviour with the HTML package.
+
+**Solution**: Installing the [Tag](https://packagecontrol.io/packages/Tag) package re-instates this functionality and seems to be working well with this one.
+
+### `.sublime-build` in the build system menu ([#73](https://github.com/daaain/Handlebars/issues/73))
 
 **Problem**: a useless and confusing item named `.sublime-build` is added to the build system menu
 
