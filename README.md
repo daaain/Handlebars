@@ -42,6 +42,16 @@ Package Control will also auto-update the package from this point on!
 2. Type "Handlebars" into the search field
 3. Click the Install button
 
+## Known problems and workarounds
+
+### `.sublime-build` in the build system menu
+
+Problem: a useless and confusing item named `.sublime-build` is added to the build system menu
+
+Reason: the package internally uses a custom build configuration to be able to target both Atom and Sublime and this gets exposed. Though it's only needed for development, Sublime doesn't seem to offer an option to hide this as the package gets installed.
+
+Solution: delete the file from the package by running `zip -d Handlebars.sublime-package ".sublime-build"` or by any other means.
+
 ## Testing / contribution
 
 I've recently stopped heavily using Handlebars at my day job and became a father, so any contributions are more than welcome! I'm still using Github so will make sure to keep on being responsive on issues and pull requests.
