@@ -28,7 +28,7 @@ Get it through [Sublime Package Control](https://packagecontrol.io/).
 
 If you haven't used it yet, just install it from the link above and then:
 
-1. Press <kbd>Shift + Command + P</kbd> (OS X) or <kbd>Shift + Control + P</kbd> (Windows)
+1. Press <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> (OS X) or <kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>P</kbd> (Windows)
 2. Type `install`, to bring up the `Package Control: Install Package` option, and press Enter
 3. Look for `Handlebars`, and press Enter to install it.
 4. Choose `Handlebars` in the bottom right corner with one of your template files open (or in case you have inline templates use Handlebars instead of HTML, it's gracefully extending it so you shouldn't lose anything)
@@ -47,7 +47,7 @@ Package Control will also auto-update the package from this point on!
 
 ### Sublime: No auto-complete on closing HTML tags ([#23](https://github.com/daaain/Handlebars/issues/23) & [#49](https://github.com/daaain/Handlebars/issues/49))
 
-**Problem**: when closing an HTML tag, the tag name doesn't get auto-completed after typing <kbd>/</kbd> (or when using the <kbd>Cmd + Alt + .</kbd> (OS X) shortcut anywhere), even though this is the default behaviour with the HTML package.
+**Problem**: when closing an HTML tag, the tag name doesn't get auto-completed after typing <kbd>/</kbd> (or when using the <kbd>Cmd</kbd> + <kbd>Alt</kbd> + <kbd>.</kbd> (OS X) shortcut anywhere), even though this is the default behaviour with the HTML package.
 
 **Solution**: installing the [Tag](https://packagecontrol.io/packages/Tag) package re-instates these functionalities and seems to be working well with this one.
 
@@ -61,7 +61,7 @@ Package Control will also auto-update the package from this point on!
 
 **Problem**: Expanding selection to tag doesn't work (Sublime command: `expand_selection {"to": "tag"}`).
 
-**Solution**: if you install the [Emmet](https://packagecontrol.io/packages/Emmet) package you can use the `Match Tag Pair` functionality by pressing <kbd>Ctrl + D</kbd> (OS X) or <kbd>Ctrl + Shift + A</kbd> (Windows).
+**Solution**: if you install the [Emmet](https://packagecontrol.io/packages/Emmet) package you can use the `Match Tag Pair` functionality by pressing <kbd>Ctrl</kbd> + <kbd>D</kbd> (OS X) or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd> (Windows).
 
 ### Sublime: `.sublime-build` in the build system menu ([#73](https://github.com/daaain/Handlebars/issues/73))
 
@@ -81,7 +81,7 @@ If you want to work on the package you should install AAAPackageDev either [from
 
 The nicest development setup I found so far is to have the package installed via Package Control and then symlinking the development Git repo to `Sublime settings folder > Packages`, which then overrides the installed one so you can toggle between them easily.
 
-Another great trick I found out about recently is the `Show scope name` shortcut (<kbd>Shift + Control + P</kbd> (OS X) or <kbd>Shift + Control + Alt + P</kbd> (Windows)) which will display the language scope on the status bar based on where your cursor is. If you're getting tired of pressing all these keys all the time, there are a few brilliant packages which do this automatically like the more subtle [ScopeAlways](https://sublime.wbond.net/packages/ScopeAlways) or the full on [ScopeHunter](https://sublime.wbond.net/packages/ScopeHunter) – note: both need to be activated via the Command Palette.
+Another great trick I found out about recently is the `Show scope name` shortcut (<kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>P</kbd> (OS X) or <kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> (Windows)) which will display the language scope on the status bar based on where your cursor is. If you're getting tired of pressing all these keys all the time, there are a few brilliant packages which do this automatically like the more subtle [ScopeAlways](https://sublime.wbond.net/packages/ScopeAlways) or the full on [ScopeHunter](https://sublime.wbond.net/packages/ScopeHunter) – note: both need to be activated via the Command Palette.
 
 Resources on ST / Textmate syntax definitions:
 
@@ -90,7 +90,7 @@ http://manual.macromates.com/en/language_grammars
 
 ### Atom
 
-To see what scope Atom detects under the keyboard cursor, press <kbd>Option + Cmd + P</kbd>.
+To see what scope Atom detects under the keyboard cursor, press <kbd>Option</kbd> + <kbd>Cmd</kbd> + <kbd>P</kbd>.
 
 TODO: add contribution notes  
 TODO: add proper testing based on https://github.com/atom/language-mustache
