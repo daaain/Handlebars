@@ -41,6 +41,7 @@ Package Control will also auto-update the package from this point on!
 1. Open Preferences > Install
 2. Type "Handlebars" into the search field
 3. Click the Install button
+4. Disable the core `language-mustache` package so that it doesn't prevent this package to be used automatically with the supported file extensions
 
 ## Known problems and workarounds
 
