@@ -46,11 +46,11 @@ Package Control will also auto-update the package from this point on!
 
 ### `.sublime-build` in the build system menu
 
-Problem: a useless and confusing item named `.sublime-build` is added to the build system menu
+*Problem*: a useless and confusing item named `.sublime-build` is added to the build system menu
 
-Reason: the package internally uses a custom build configuration to be able to target both Atom and Sublime and this gets exposed. Though it's only needed for development, Sublime doesn't seem to offer an option to hide this as the package gets installed.
+*Reason*: the package internally uses a custom build configuration to be able to target both Atom and Sublime and this gets exposed. Though it's only needed for development, Sublime doesn't seem to offer an option to hide this as the package gets installed.
 
-Solution: delete the file from the package by running `zip -d Handlebars.sublime-package ".sublime-build"` or by any other means.
+*Solution*: delete the file from the package by running `zip -d Handlebars.sublime-package ".sublime-build"` or by any other means.
 
 ## Testing / contribution
 
