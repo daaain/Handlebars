@@ -24,7 +24,7 @@ Official website: [handlebarsjs.com](http://handlebarsjs.com/)
 
 ## Sublime Text installation
 
-Get it through [Sublime Package Control](http://wbond.net/sublime_packages/package_control).
+Get it through [Sublime Package Control](https://packagecontrol.io/).
 
 If you haven't used it yet, just install it from the link above and then:
 
@@ -49,7 +49,13 @@ Package Control will also auto-update the package from this point on!
 
 **Problem**: when closing an HTML tag, the tag name doesn't get auto-completed after typing `/` (or when using the `CMD + Alt + .` shortcut anywhere), even though this is the default behaviour with the HTML package.
 
-**Solution**: Installing the [Tag](https://packagecontrol.io/packages/Tag) package re-instates these functionalities and seems to be working well with this one.
+**Solution**: installing the [Tag](https://packagecontrol.io/packages/Tag) package re-instates these functionalities and seems to be working well with this one.
+
+### HTML tag pair doesn't get highlighted ([#48](https://github.com/daaain/Handlebars/issues/48))
+
+**Problem**: moving the cursor over an HTML tag doesn't highlight its pair.
+
+**Solution**: installing the [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter) package nicely solves the problem and adds much more powerful bracket matching than the built-in one.
 
 ### `.sublime-build` in the build system menu ([#73](https://github.com/daaain/Handlebars/issues/73))
 
