@@ -28,7 +28,7 @@ Get it through [Sublime Package Control](https://packagecontrol.io/).
 
 If you haven't used it yet, just install it from the link above and then:
 
-1. Press <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> (OS X) or <kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>P</kbd> (Windows)
+1. Press <kbd>Shift</kbd> + <kbd>Cmd</kbd> + <kbd>P</kbd> (OS X) or <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>P</kbd> (Windows)
 2. Type `install`, to bring up the `Package Control: Install Package` option, and press Enter
 3. Look for `Handlebars`, and press Enter to install it.
 4. Choose `Handlebars` in the bottom right corner with one of your template files open (or in case you have inline templates use Handlebars instead of HTML, it's gracefully extending it so you shouldn't lose anything)
@@ -81,7 +81,7 @@ If you want to work on the package you should install AAAPackageDev either [from
 
 The nicest development setup I found so far is to have the package installed via Package Control and then symlinking the development Git repo to `Sublime settings folder > Packages`, which then overrides the installed one so you can toggle between them easily.
 
-Another great trick I found out about recently is the `Show scope name` shortcut (<kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>P</kbd> (OS X) or <kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> (Windows)) which will display the language scope on the status bar based on where your cursor is. If you're getting tired of pressing all these keys all the time, there are a few brilliant packages which do this automatically like the more subtle [ScopeAlways](https://sublime.wbond.net/packages/ScopeAlways) or the full on [ScopeHunter](https://sublime.wbond.net/packages/ScopeHunter) – note: both need to be activated via the Command Palette.
+Another great trick I found out about recently is the `Show scope name` shortcut (<kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>P</kbd> (OS X) or <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> (Windows)) which will display the language scope on the status bar based on where your cursor is. If you're getting tired of pressing all these keys all the time, there are a few brilliant packages which do this automatically like the more subtle [ScopeAlways](https://sublime.wbond.net/packages/ScopeAlways) or the full on [ScopeHunter](https://sublime.wbond.net/packages/ScopeHunter) – note: both need to be activated via the Command Palette.
 
 Resources on ST / Textmate syntax definitions:
 
