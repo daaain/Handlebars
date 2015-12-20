@@ -558,6 +558,27 @@
             "patterns": [
                 {
                     "include": "#string"
+                },
+                {
+                    "include": "#handlebars_attribute"
+                }
+            ]
+        },
+        "handlebars_attribute": {
+            "begin": "\\b([\\.a-zA-Z0-9_-]+)\\b\\s*(=)?",
+            "captures": {
+                "1": {
+                    "name": "variable.parameter.handlebars"
+                },
+                "2": {
+                    "name": "variable.parameter.handlebars"
+                }
+            },
+            "end": "(?='|\"|)",
+            "name": "entity.other.attribute-name.handlebars",
+            "patterns": [
+                {
+                    "include": "#string"
                 }
             ]
         },

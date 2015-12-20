@@ -328,6 +328,35 @@
 			<key>name</key>
 			<string>constant.character.escape.js</string>
 		</dict>
+		<key>handlebars_attribute</key>
+		<dict>
+			<key>begin</key>
+			<string>\b([\.a-zA-Z0-9_-]+)\b\s*(=)?</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.handlebars</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.handlebars</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?='|"|)</string>
+			<key>name</key>
+			<string>entity.other.attribute-name.handlebars</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
+				</dict>
+			</array>
+		</dict>
 		<key>html_tags</key>
 		<dict>
 			<key>patterns</key>
@@ -937,6 +966,10 @@
 				<dict>
 					<key>include</key>
 					<string>#string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#handlebars_attribute</string>
 				</dict>
 			</array>
 		</dict>
