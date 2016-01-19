@@ -229,13 +229,23 @@
 		<key>else_token</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{~?else)</string>
+			<string>(\{\{~?else)(@?\s(if)\s([-a-zA-Z0-9_\./]+))?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>support.constant.handlebars</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.handlebars</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.handlebars</string>
 				</dict>
 			</dict>
 			<key>end</key>
