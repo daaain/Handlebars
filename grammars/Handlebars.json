@@ -583,12 +583,18 @@
             ]
         },
         "else_token": {
-            "begin": "(\\{\\{~?else)",
+            "begin": "(\\{\\{~?else)(@?\\s(if)\\s([-a-zA-Z0-9_\\./]+))?",
             "end": "(~?\\}\\}\\}*)",
             "name": "meta.function.inline.else.handlebars",
             "beginCaptures": {
                 "1": {
                     "name": "support.constant.handlebars"
+                },
+                "3": {
+                    "name": "support.constant.handlebars"
+                },
+                "4": {
+                    "name": "variable.parameter.handlebars"
                 }
             },
             "endCaptures": {
