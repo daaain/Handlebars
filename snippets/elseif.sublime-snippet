@@ -1,0 +1,6 @@
+<snippet>
+  <content>{{else if ${1}}}</content>
+  <tabTrigger>elif</tabTrigger>
+  <scope>text.html.handlebars,text.html.basic source.js.embedded.html, text.html.twig source.js.embedded.html</scope>
+  <description>else if(handlebars)</description>
+</snippet>

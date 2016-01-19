@@ -9,6 +9,7 @@
   - `if` → `{{#if }}`
   - `ifel` → `{{#if }} {{else}}`
   - `el` → `{{else}}`
+  - `elif` → `{{else if }}`
   - `un` → `{{#unless }}`
   - `ea` → `{{#each }}`
   - `wi` → `{{#with }}`
