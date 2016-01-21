@@ -21,6 +21,20 @@
 {{customHelper 'test-single-quote-escaped\''}}
 {{customHelper "test-double-quote-escaped\""}}
 
+{{! TODO: parameters in block vs inline helpers }}
+{{#select a="aa" b="bb" c="cc"}}{{/select}}
+{{select a="aa" b="bb" c="cc"}}
+
+{{! subexpressions }}
+{{outer-helper (inner-helper 'abc') 'def'}}
+
+{{! TODO: named block parameters }}
+{{#each users as |user userId|}}
+  {{#each user.book as |book bookId|}}
+    User Id: {{userId}} Book Id: {{bookId}}
+  {{/each}}
+{{/each}}
+
 {{! TODO: array notation }}
 {{#each articles.[10].[#comments]}}
 	<h1>{{subject}}</h1>
