@@ -582,6 +582,28 @@
                 }
             ]
         },
+        "extends": {
+            "patterns": [
+                {
+                    "end": "(\\}\\})",
+                    "begin": "(\\{\\{!<)\\s([-a-zA-Z0-9_\\./]+)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "support.function.handlebars"
+                        },
+                        "2": {
+                            "name": "support.class.handlebars"
+                        }
+                    },
+                    "endCaptures": {
+                        "1": {
+                            "name": "support.function.handlebars"
+                        }
+                    },
+                    "name": "meta.preprocessor.handlebars"
+                }
+            ]
+        },
         "else_token": {
             "begin": "(\\{\\{~?else)(@?\\s(if)\\s([-a-zA-Z0-9_\\./]+))?",
             "end": "(~?\\}\\}\\}*)",
@@ -780,6 +802,9 @@
     "patterns": [
         {
             "include": "#yfm"
+        },
+        {
+            "include": "#extends"
         },
         {
             "include": "#block_comments"

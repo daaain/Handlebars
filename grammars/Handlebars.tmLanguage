@@ -28,6 +28,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#extends</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#block_comments</string>
 		</dict>
 		<dict>
@@ -337,6 +341,41 @@
 			<string>\\'</string>
 			<key>name</key>
 			<string>constant.character.escape.js</string>
+		</dict>
+		<key>extends</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(\{\{!&lt;)\s([-a-zA-Z0-9_\./]+)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.function.handlebars</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>support.class.handlebars</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(\}\})</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.function.handlebars</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.preprocessor.handlebars</string>
+				</dict>
+			</array>
 		</dict>
 		<key>handlebars_attribute</key>
 		<dict>
