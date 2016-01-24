@@ -25,17 +25,20 @@
 {{#select a="aa" b="bb" c="cc"}}{{/select}}
 {{select a="aa" b="bb" c="cc"}}
 
-{{! subexpressions }}
+{{! FIXME: subexpressions }}
+{{! this could be improved }}
 {{outer-helper (inner-helper 'abc') 'def'}}
 
-{{! TODO: named block parameters }}
+{{! FIXME: named block parameters }}
+{{! this could be improved }}
 {{#each users as |user userId|}}
   {{#each user.book as |book bookId|}}
     User Id: {{userId}} Book Id: {{bookId}}
   {{/each}}
 {{/each}}
 
-{{! TODO: array notation }}
+{{! FIXME: array notation }}
+{{! this could be improved }}
 {{#each articles.[10].[#comments]}}
 	<h1>{{subject}}</h1>
 	<div>
