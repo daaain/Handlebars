@@ -489,7 +489,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#tag-generic-attribute</string>
+							<string>#tag_generic_attribute</string>
 						</dict>
 						<dict>
 							<key>include</key>

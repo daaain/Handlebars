@@ -49,7 +49,7 @@
                     "name": "meta.tag.preprocessor.xml.html",
                     "patterns": [
                         {
-                            "include": "#tag-generic-attribute"
+                            "include": "#tag_generic_attribute"
                         },
                         {
                             "include": "#string"
