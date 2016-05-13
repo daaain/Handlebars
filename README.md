@@ -94,7 +94,7 @@ http://manual.macromates.com/en/language_grammars
 To see what scope Atom detects under the keyboard cursor, press <kbd>Option</kbd> + <kbd>Cmd</kbd> + <kbd>P</kbd>.
 
 TODO: add contribution notes  
-TODO: add proper testing based on https://github.com/atom/language-mustache
+TODO: add proper testing based on specs in https://github.com/atom/language-mustache and https://github.com/Sneagan/atom-handlebars
 
 ## Precompilation
 
