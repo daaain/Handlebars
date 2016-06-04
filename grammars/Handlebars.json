@@ -448,7 +448,7 @@
             ]
         },
         "block_helper": {
-            "begin": "(\\{\\{~?\\#)([-a-zA-Z0-9_\\./]+)\\s?(@?[-a-zA-Z0-9_\\./]+=?)*\\s?(@?[-a-zA-Z0-9_\\./]+)*\\s?(@?[-a-zA-Z0-9_\\./]+)*",
+            "begin": "(\\{\\{~?\\#)([-a-zA-Z0-9_\\./]+)\\s?(@?[-a-zA-Z0-9_\\./]+)*\\s?(@?[-a-zA-Z0-9_\\./]+)*\\s?(@?[-a-zA-Z0-9_\\./]+)*",
             "end": "(~?\\}\\})",
             "name": "meta.function.block.start.handlebars",
             "endCaptures": {
@@ -567,21 +567,38 @@
                 }
             ]
         },
-        "handlebars_attribute": {
-            "begin": "\\b([\\.a-zA-Z0-9_-]+)\\b\\s*(=)?",
+        "handlebars_attribute_name": {
+            "begin": "\\b([\\.a-zA-Z0-9_-]+)\\b=",
             "captures": {
                 "1": {
-                    "name": "variable.parameter.handlebars"
-                },
-                "2": {
                     "name": "variable.parameter.handlebars"
                 }
             },
             "end": "(?='|\"|)",
-            "name": "entity.other.attribute-name.handlebars",
+            "name": "entity.other.attribute-name.handlebars"
+        },
+        "handlebars_attribute_value": {
+            "begin": "\\b([\\.a-zA-Z0-9_-]+)\\b\\s*",
+            "captures": {
+                "1": {
+                    "name": "variable.parameter.handlebars"
+                }
+            },
+            "end": "('|\"|)",
+            "name": "entity.other.attribute-value.handlebars",
             "patterns": [
                 {
                     "include": "#string"
+                }
+            ]
+        },
+        "handlebars_attribute": {
+            "patterns": [
+                {
+                    "include": "#handlebars_attribute_name"
+                },
+                {
+                    "include": "#handlebars_attribute_value"
                 }
             ]
         },
