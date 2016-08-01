@@ -398,7 +398,7 @@
 		<key>handlebars_attribute_name</key>
 		<dict>
 			<key>begin</key>
-			<string>\b([\.a-zA-Z0-9_-]+)\b=</string>
+			<string>\b([-a-zA-Z0-9_\.]+)\b=</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -415,7 +415,7 @@
 		<key>handlebars_attribute_value</key>
 		<dict>
 			<key>begin</key>
-			<string>\b([\.a-zA-Z0-9_-]+)\b\s*</string>
+			<string>([-a-zA-Z0-9_\./]+)\b\s*</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>

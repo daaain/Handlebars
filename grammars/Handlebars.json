@@ -568,7 +568,7 @@
             ]
         },
         "handlebars_attribute_name": {
-            "begin": "\\b([\\.a-zA-Z0-9_-]+)\\b=",
+            "begin": "\\b([-a-zA-Z0-9_\\.]+)\\b=",
             "captures": {
                 "1": {
                     "name": "variable.parameter.handlebars"
@@ -578,7 +578,7 @@
             "name": "entity.other.attribute-name.handlebars"
         },
         "handlebars_attribute_value": {
-            "begin": "\\b([\\.a-zA-Z0-9_-]+)\\b\\s*",
+            "begin": "([-a-zA-Z0-9_\\./]+)\\b\\s*",
             "captures": {
                 "1": {
                     "name": "variable.parameter.handlebars"
