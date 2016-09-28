@@ -35,9 +35,9 @@
 {{! FIXME: named block parameters }}
 {{! this could be improved }}
 {{#each users as |user userId|}}
-  {{#each user.book as |book bookId|}}
-    User Id: {{userId}} Book Id: {{bookId}}
-  {{/each}}
+	{{#each user.book as |book bookId|}}
+		User Id: {{userId}} Book Id: {{bookId}}
+	{{/each}}
 {{/each}}
 
 {{! FIXME: array notation }}
@@ -80,20 +80,25 @@
 {{/if}}
 
 {{#x-card onsubmit=attrs.onsubmit title='Login to Peepchat' buttonText='Login'}}
-  <div class="row">
-    {{x-input
-      value=model.email
-      errors=validations.attrs.model.email.messages
-      classNames='col s12'
-      type='email'
-      label='Username'}}
-  </div>
-  <div class="row">
-    {{x-input
-      value=model.password
-      errors=validations.attrs.model.password.messages
-      classNames='col s12'
-      type='password'
-      label='Password'}}
-  </div>
+	<div class="row">
+		{{x-input
+			value=model.email
+			errors=validations.attrs.model.email.messages
+			classNames='col s12'
+			type='email'
+			label='Username'}}
+	</div>
+	<div class="row">
+		{{x-input
+			value=model.password
+			errors=validations.attrs.model.password.messages
+			classNames='col s12'
+			type='password'
+			label='Password'}}
+	</div>
 {{/x-card}}
+
+{{! partial block }}
+{{#> myPartial }}
+	Failover content
+{{/myPartial}}
