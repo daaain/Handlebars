@@ -124,7 +124,7 @@
 		<key>block_helper</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{~?\#)([-a-zA-Z0-9_\./&gt;]+)\s?(@?[-a-zA-Z0-9_\./]+)*\s?(@?[-a-zA-Z0-9_\./]+)*\s?(@?[-a-zA-Z0-9_\./]+)*</string>
+			<string>(\{\{~?\#)([-a-zA-Zа-яА-Я0-9_\./&gt;]+)\s?(@?[-a-zA-Zа-яА-Я0-9_\./]+)*\s?(@?[-a-zA-Zа-яА-Я0-9_\./]+)*\s?(@?[-a-zA-Zа-яА-Я0-9_\./]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -237,7 +237,7 @@
 		<key>else_token</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{~?else)(@?\s(if)\s([-a-zA-Z0-9_\./]+))?</string>
+			<string>(\{\{~?else)(@?\s(if)\s([-a-zA-Zа-яА-Я0-9_\./]+))?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -352,7 +352,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(\{\{!&lt;)\s([-a-zA-Z0-9_\./]+)</string>
+					<string>(\{\{!&lt;)\s([-a-zA-Zа-яА-Я0-9_\./]+)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -398,7 +398,7 @@
 		<key>handlebars_attribute_name</key>
 		<dict>
 			<key>begin</key>
-			<string>\b([-a-zA-Z0-9_\.]+)\b=</string>
+			<string>\b([-a-zA-Zа-яА-Я0-9_\.]+)\b=</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -415,7 +415,7 @@
 		<key>handlebars_attribute_value</key>
 		<dict>
 			<key>begin</key>
-			<string>([-a-zA-Z0-9_\./]+)\b\s*</string>
+			<string>([-a-zA-Zа-яА-Я0-9_\./]+)\b\s*</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -1014,7 +1014,7 @@
 		<key>partial_and_var</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{~?\{*(&gt;|!&lt;)*)\s*(@?[-a-zA-Z0-9_\./]+)*</string>
+			<string>(\{\{~?\{*(&gt;|!&lt;)*)\s*(@?[-a-zA-Zа-яА-Я0-9_\./]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>

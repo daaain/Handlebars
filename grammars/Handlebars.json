@@ -448,7 +448,7 @@
             ]
         },
         "block_helper": {
-            "begin": "(\\{\\{~?\\#)([-a-zA-Z0-9_\\./>]+)\\s?(@?[-a-zA-Z0-9_\\./]+)*\\s?(@?[-a-zA-Z0-9_\\./]+)*\\s?(@?[-a-zA-Z0-9_\\./]+)*",
+            "begin": "(\\{\\{~?\\#)([-a-zA-Zа-яА-Я0-9_\\./>]+)\\s?(@?[-a-zA-Zа-яА-Я0-9_\\./]+)*\\s?(@?[-a-zA-Zа-яА-Я0-9_\\./]+)*\\s?(@?[-a-zA-Zа-яА-Я0-9_\\./]+)*",
             "end": "(~?\\}\\})",
             "name": "meta.function.block.start.handlebars",
             "endCaptures": {
@@ -542,7 +542,7 @@
             "match": "\\\\\""
         },
         "partial_and_var": {
-            "begin": "(\\{\\{~?\\{*(>|!<)*)\\s*(@?[-a-zA-Z0-9_\\./]+)*",
+            "begin": "(\\{\\{~?\\{*(>|!<)*)\\s*(@?[-a-zA-Zа-яА-Я0-9_\\./]+)*",
             "end": "(~?\\}\\}\\}*)",
             "name": "meta.function.inline.other.handlebars",
             "beginCaptures": {
@@ -568,7 +568,7 @@
             ]
         },
         "handlebars_attribute_name": {
-            "begin": "\\b([-a-zA-Z0-9_\\.]+)\\b=",
+            "begin": "\\b([-a-zA-Zа-яА-Я0-9_\\.]+)\\b=",
             "captures": {
                 "1": {
                     "name": "variable.parameter.handlebars"
@@ -578,7 +578,7 @@
             "name": "entity.other.attribute-name.handlebars"
         },
         "handlebars_attribute_value": {
-            "begin": "([-a-zA-Z0-9_\\./]+)\\b\\s*",
+            "begin": "([-a-zA-Zа-яА-Я0-9_\\./]+)\\b\\s*",
             "captures": {
                 "1": {
                     "name": "variable.parameter.handlebars"
@@ -606,7 +606,7 @@
             "patterns": [
                 {
                     "end": "(\\}\\})",
-                    "begin": "(\\{\\{!<)\\s([-a-zA-Z0-9_\\./]+)",
+                    "begin": "(\\{\\{!<)\\s([-a-zA-Zа-я0-9_\\./]+)",
                     "beginCaptures": {
                         "1": {
                             "name": "support.function.handlebars"
@@ -625,7 +625,7 @@
             ]
         },
         "else_token": {
-            "begin": "(\\{\\{~?else)(@?\\s(if)\\s([-a-zA-Z0-9_\\./]+))?",
+            "begin": "(\\{\\{~?else)(@?\\s(if)\\s([-a-zA-Zа-я0-9_\\./]+))?",
             "end": "(~?\\}\\}\\}*)",
             "name": "meta.function.inline.else.handlebars",
             "beginCaptures": {
