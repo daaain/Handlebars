@@ -272,7 +272,7 @@
 		<key>end_block</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{~?/)([a-zA-Z0-9_\.-]+)\s*</string>
+			<string>(\{\{~?/)([a-zA-Z0-9/_\.-]+)\s*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>

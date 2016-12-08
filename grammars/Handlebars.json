@@ -327,7 +327,7 @@
             ]
         },
         "end_block": {
-            "begin": "(\\{\\{~?/)([a-zA-Z0-9_\\.-]+)\\s*",
+            "begin": "(\\{\\{~?/)([a-zA-Z0-9/_\\.-]+)\\s*",
             "end": "(~?\\}\\})",
             "name": "meta.function.block.end.handlebars",
             "endCaptures": {
