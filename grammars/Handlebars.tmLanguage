@@ -415,7 +415,7 @@
 		<key>handlebars_attribute_value</key>
 		<dict>
 			<key>begin</key>
-			<string>([-a-zA-Z0-9_\./]+)\b\s*</string>
+			<string>([-a-zA-Z0-9_\./]+)\b</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
