@@ -1014,7 +1014,7 @@
 		<key>partial_and_var</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{~?\{*(&gt;|!&lt;)*)\s*(@?[-a-zA-Z0-9_\./]+)*</string>
+			<string>(\{\{~?\{*(&gt;|!&lt;)*)\s*(@?[-a-zA-Z0-9$_\./]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>

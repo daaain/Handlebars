@@ -542,7 +542,7 @@
             "match": "\\\\\""
         },
         "partial_and_var": {
-            "begin": "(\\{\\{~?\\{*(>|!<)*)\\s*(@?[-a-zA-Z0-9_\\./]+)*",
+            "begin": "(\\{\\{~?\\{*(>|!<)*)\\s*(@?[-a-zA-Z0-9$_\\./]+)*",
             "end": "(~?\\}\\}\\}*)",
             "name": "meta.function.inline.other.handlebars",
             "beginCaptures": {
