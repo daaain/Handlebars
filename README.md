@@ -110,7 +110,7 @@ There are of course Node.js / Grunt / Gulp based compilers too ([like this](http
 
 Adapted from the great [sublime-text-handlebars](https://github.com/nrw/sublime-text-handlebars) package by Nicholas Westlake.
 
-Thanks a lot to all the generous contributors (in alphabetical order): @bittersweetryan, @bradcliffe, @calumbrodie, @duncanbeevers, @hlvnst, @jonschlinkert, @Krutius, @samselikoff, @utkarshkukreti, @zeppelin
+Thanks a lot to all the [generous contributors](https://github.com/daaain/Handlebars/graphs/contributors)!
 
 ## License
 
