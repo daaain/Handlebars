@@ -1,6 +1,6 @@
 <snippet>
-  <content><![CDATA[{{#if ${2}}}
-${1}
+  <content><![CDATA[{{#if ${1}}}
+${2}
 {{else}}
 ${0}
 {{/if}}]]></content>
