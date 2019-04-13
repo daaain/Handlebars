@@ -631,7 +631,7 @@
             ]
         },
         "else_token": {
-            "begin": "(\\{\\{)(~?else)(@?\\s(if)\\s([-a-zA-Z0-9_\\./]+))?",
+            "begin": "(\\{\\{)(~?else)(@?\\s(if)\\s([-a-zA-Z0-9_\\.\\(\\s\\)/]+))?",
             "end": "(~?\\}\\}\\}*)",
             "name": "meta.function.inline.else.handlebars",
             "beginCaptures": {

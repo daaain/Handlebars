@@ -242,7 +242,7 @@
 		<key>else_token</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{)(~?else)(@?\s(if)\s([-a-zA-Z0-9_\./]+))?</string>
+			<string>(\{\{)(~?else)(@?\s(if)\s([-a-zA-Z0-9_\.\(\s\)/]+))?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>

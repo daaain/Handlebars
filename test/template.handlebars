@@ -78,6 +78,8 @@
 <p>First</p>
 {{else if alternate}}
 <p>Second</p>
+{{else if (sub-exp this.message)}}
+<p>Third</p>
 {{/if}}
 
 {{#x-card onsubmit=attrs.onsubmit title='Login to Peepchat' buttonText='Login'}}
