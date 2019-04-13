@@ -17,7 +17,7 @@
   - `x-temp` → `<script type="text/x-handlebars" data-template-name="$1">` (inline script tag in HTML files using the Ember recommended `data-template-name` attribute)
   - `x-id` → `<script type="text/x-handlebars-template" id="$1">` (inline script tag in HTML files using the legacy `id` attribute)
 
-Since (as of February 2017) the syntax definitions in this repository are driving the highlights on [Github](https://github.com/github/linguist/blob/76d41697aaed6e0354202dd94e07d646c82dfe61/vendor/README.md) and in [Visual Studio Code](https://github.com/Microsoft/vscode/tree/a70621b5a18d6606fffecc05efdcd96463ff0f7f/extensions/handlebars), it's fair game to open issues related to either of these 😺
+Since (as of February 2017) the syntax definitions in this repository are driving the highlights on [Github](https://github.com/github/linguist/tree/master/vendor) and in [Visual Studio Code](https://github.com/Microsoft/vscode/tree/master/extensions/handlebars), it's fair game to open issues related to either of these 😺
 
 ## About Handlebars.js
 
@@ -94,6 +94,8 @@ http://manual.macromates.com/en/language_grammars
 ### Atom
 
 To see what scope Atom detects under the keyboard cursor, press <kbd>Option</kbd> + <kbd>Cmd</kbd> + <kbd>P</kbd>.
+
+To publish a new version to atom.io the command is: `apm publish [<newversion> | major | minor | patch | build]`
 
 TODO: add contribution notes  
 TODO: add proper testing based on specs in https://github.com/atom/language-mustache and https://github.com/Sneagan/atom-handlebars
