@@ -264,26 +264,12 @@ contexts:
           captures:
             1: punctuation.definition.tag.html
             2: entity.name.tag.script.html
-          push:
-            - match: (</)((?i:script))
-              captures:
-                1: punctuation.definition.tag.html
-                2: entity.name.tag.script.html
-              pop: true
-            - match: (//).*?((?=</script)|$\n?)
-              scope: comment.line.double-slash.js
-              captures:
-                1: punctuation.definition.comment.js
-            - match: /\*
-              captures:
-                0: punctuation.definition.comment.js
-              push:
-                - meta_scope: comment.block.js
-                - match: \*/|(?=</script)
-                  captures:
-                    0: punctuation.definition.comment.js
-                  pop: true
-            - include: scope:source.js
+          embed: scope:source.js
+          escape: "(</)(script)"
+          embed_scope: "inner-js-content"
+          escape_captures:
+            1: punctuation.definition.tag.html
+            2: entity.name.tag.script.html
     - match: (</?)((?i:body|head|html)\b)
       captures:
         1: punctuation.definition.tag.html
