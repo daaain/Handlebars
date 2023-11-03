@@ -1,4 +1,4 @@
-# Atom and Sublime Text 2 / 3 Handlebars.js bundle
+# Sublime Text 2 / 3 Handlebars.js bundle
 
 - Colours of Handlebars expressions are selected to be in contrast with the surrounding HTML.
 - Handlebars expressions get syntax highlighting in HTML attributes.
@@ -39,13 +39,6 @@ If you haven't used it yet, just install it from the link above and then:
 
 Package Control will also auto-update the package from this point on!
 
-## Atom installation
-
-1. Open Preferences > Install
-2. Type `Handlebars` into the search field
-3. Click the Install button
-4. Disable the core `language-mustache` package so that it doesn't prevent this package to be used automatically with the supported file extensions
-
 ## Known problems and workarounds
 
 ### Sublime: No auto-complete on closing HTML tags ([#23](https://github.com/daaain/Handlebars/issues/23) & [#49](https://github.com/daaain/Handlebars/issues/49))
@@ -82,31 +75,17 @@ There are some sample templates in `test/` folder. It's possible to see the diff
 
 If you want to work on the package you should install PackageDev either [from Github](https://github.com/SublimeText/PackageDev) or from Package Control. With that you can edit the JSON version (`grammars/Handlebars.json`) and let it export the Plist (`grammars/Handlebars.tmLanguage`) with the ST Build System.
 
-Sublime Text does not use the Plist format (`grammars/Handlebars.tmLanguage`); rather, it uses the Sublime-Syntax file (`grammars/Handlebars.sublime-syntax`). This file was originally generated with the `Plugin Development: Convert Syntax to .sublime-syntax` Sublime command, but it has since diverged in order to fix a Sublime Text specific bug ([#110](https://github.com/daaain/Handlebars/issues/110)). Ideally, the two versions will track each other, but Pull Requests which effect only one version are still appreciated.
+Sublime Text does not use the [Plist format](http://manual.macromates.com/en/language_grammars) (`grammars/Handlebars.tmLanguage`); rather, it uses the Sublime-Syntax file (`grammars/Handlebars.sublime-syntax`). This file was originally generated with the `Plugin Development: Convert Syntax to .sublime-syntax` Sublime command, but it has since diverged in order to fix a Sublime Text specific bug ([#110](https://github.com/daaain/Handlebars/issues/110)). Ideally, the two versions will track each other, but Pull Requests which effect only one version are still appreciated.
 
 The nicest development setup I found so far is to have the package installed via Package Control and then symlinking the development Git repo to `Sublime settings folder > Packages`, which then overrides the installed one so you can toggle between them easily.
 
 Another great trick I found out about recently is the `Show scope name` shortcut (<kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>P</kbd> (OS X) or <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd> (Windows)) which will display the language scope on the status bar based on where your cursor is. If you're getting tired of pressing all these keys all the time, there are a few brilliant packages which do this automatically like the more subtle [ScopeAlways](https://sublime.wbond.net/packages/ScopeAlways) or the full on [ScopeHunter](https://sublime.wbond.net/packages/ScopeHunter) – note: both need to be activated via the Command Palette.
 
-Resources on ST / Textmate syntax definitions:
-
-http://docs.sublimetext.info/en/latest/extensibility/syntaxdefs.html
-http://manual.macromates.com/en/language_grammars
-
-### Atom
-
-To see what scope Atom detects under the keyboard cursor, press <kbd>Option</kbd> + <kbd>Cmd</kbd> + <kbd>P</kbd>.
-
-To publish a new version to atom.io the command is: `apm publish [<newversion> | major | minor | patch | build]`
-
-TODO: add contribution notes  
-TODO: add proper testing based on specs in https://github.com/atom/language-mustache and https://github.com/Sneagan/atom-handlebars
-
 ## Precompilation
 
-This package does not offer any Handlebars precompilation functionality to keep things simple, but you can use [Guard](https://github.com/guard/guard) (which is a file system watcher) and [Guard-Steering](https://github.com/guard/guard-steering) (a Handlebars precompiler from yours truly) to have all templates precompiled as you save them.
+This package does not offer any Handlebars precompilation functionality to keep things simple, but you can use Ruby [Guard](https://github.com/guard/guard) (which is a file system watcher) and [Guard-Steering](https://github.com/guard/guard-steering) (a Handlebars precompiler from yours truly) to have all templates precompiled as you save them.
 
-There's also a [Guard package for Sublime](https://github.com/cyphactor/sublime_guard) if you want integration, but I don't personally use this as I'm happy with Guard running in an iTerm window I can access from anywhere.
+There's also a [Guard package for Sublime](https://github.com/cyphactor/sublime_guard) if you want integration, but I don't personally use this as I'm happy with Guard running in a terminal window I can access from anywhere.
 
 There are of course Node.js / Grunt / Gulp based compilers too ([like this](https://npmjs.org/package/grunt-handlebars-js) and [this](https://www.npmjs.com/package/gulp-compile-handlebars)), but I haven't personally used any yet for precompilation.
 
