@@ -1,7 +1,7 @@
 {
   "name": "Handlebars",
-  "version": "1.9.0",
-  "description": "Fullest Handlebars syntax support for Atom",
+  "version": "1.10.0",
+  "description": "Fullest Handlebars syntax support for Sublime Text, Atom and VS Code",
   "repository": "https://github.com/daaain/Handlebars",
   "license": "MIT",
   "engines": {
