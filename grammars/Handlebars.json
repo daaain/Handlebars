@@ -356,8 +356,8 @@
                             "include": "source.yaml"
                         }
                     ],
-                    "begin": "(?<!\\s)---\\n$",
-                    "end": "^---\\s",
+                    "begin": "\\A-{3}$",
+                    "end": "^-{3}$",
                     "name": "markup.raw.yaml.front-matter"
                 }
             ]
@@ -374,8 +374,8 @@
                             "include": "#comments"
                         }
                     ],
-                    "begin": "\\{\\{!",
-                    "end": "\\}\\}",
+                    "begin": "\\{\\{~?!",
+                    "end": "~?\\}\\}",
                     "name": "comment.block.handlebars"
                 },
                 {
@@ -408,8 +408,8 @@
                             "include": "#comments"
                         }
                     ],
-                    "begin": "\\{\\{!--",
-                    "end": "--\\}\\}",
+                    "begin": "\\{\\{~?!--",
+                    "end": "--~?\\}\\}",
                     "name": "comment.block.handlebars"
                 },
                 {

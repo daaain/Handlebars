@@ -1,4 +1,5 @@
 *.cache
+node_modules/
 handlebars.sublime-project
 handlebars.sublime-workspace
 npm-debug.log

@@ -31,10 +31,10 @@ contexts:
     - include: html_tags
     - include: scope:text.html.basic
   block_comments:
-    - match: '\{\{!--'
+    - match: '\{\{~?!--'
       push:
         - meta_scope: comment.block.handlebars
-        - match: '--\}\}'
+        - match: '--~?\}\}'
           pop: true
         - match: '@\w*'
           scope: keyword.annotation.handlebars
@@ -69,10 +69,10 @@ contexts:
         - include: string
         - include: handlebars_attribute
   comments:
-    - match: '\{\{!'
+    - match: '\{\{~?!'
       push:
         - meta_scope: comment.block.handlebars
-        - match: '\}\}'
+        - match: '~?\}\}'
           pop: true
         - match: '@\w*'
           scope: keyword.annotation.handlebars
@@ -454,9 +454,9 @@ contexts:
           pop: true
         - include: string
   yfm:
-    - match: (?<!\s)---\n$
+    - match: \A-{3}$
       push:
         - meta_scope: markup.raw.yaml.front-matter
-        - match: ^---\s
+        - match: ^-{3}$
           pop: true
         - include: scope:source.yaml
