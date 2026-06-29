@@ -7,5 +7,12 @@
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {}
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.3.2"
+  }
 }

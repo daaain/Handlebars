@@ -374,8 +374,8 @@
                             "include": "#comments"
                         }
                     ],
-                    "begin": "\\{\\{!",
-                    "end": "\\}\\}",
+                    "begin": "\\{\\{~?!",
+                    "end": "~?\\}\\}",
                     "name": "comment.block.handlebars"
                 },
                 {
@@ -408,8 +408,8 @@
                             "include": "#comments"
                         }
                     ],
-                    "begin": "\\{\\{!--",
-                    "end": "--\\}\\}",
+                    "begin": "\\{\\{~?!--",
+                    "end": "--~?\\}\\}",
                     "name": "comment.block.handlebars"
                 },
                 {

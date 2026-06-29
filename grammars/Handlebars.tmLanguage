@@ -75,9 +75,9 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\{\{!--</string>
+					<string>\{\{~?!--</string>
 					<key>end</key>
-					<string>--\}\}</string>
+					<string>--~?\}\}</string>
 					<key>name</key>
 					<string>comment.block.handlebars</string>
 					<key>patterns</key>
@@ -193,9 +193,9 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\{\{!</string>
+					<string>\{\{~?!</string>
 					<key>end</key>
-					<string>\}\}</string>
+					<string>~?\}\}</string>
 					<key>name</key>
 					<string>comment.block.handlebars</string>
 					<key>patterns</key>
