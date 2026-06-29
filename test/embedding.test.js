@@ -54,6 +54,36 @@ test('inline <script> template embeds Handlebars', async () => {
   await assertScope(src, 'title', 'variable.parameter.handlebars');
 });
 
+// Regression for #58: an `id` (or any attribute) appearing BEFORE `type` in the
+// opening tag must still be highlighted. The old grammar consumed everything up
+// to `type=` with a greedy `.*`, swallowing the leading attributes into one
+// unscoped token. The fix asserts the handlebars `type` via a lookahead and lets
+// the #tag-stuff rules highlight every attribute regardless of order.
+test('#58: id attribute before type is still highlighted', async () => {
+  const src = '<script id="t" type="text/x-handlebars-template"></script>';
+  await assertScope(src, 'id', 'entity.other.attribute-name.id.html');
+  await assertScope(src, 't', 'string.quoted.double.handlebars');
+  // The script body is still recognised as an embedded handlebars template.
+  await assertScope(src, 'script', 'entity.name.tag.script.html');
+});
+
+test('#58: id attribute after type is still highlighted (no regression)', async () => {
+  const src = '<script type="text/x-handlebars-template" id="t"></script>';
+  await assertScope(src, 'id', 'entity.other.attribute-name.id.html');
+  await assertScope(src, 't', 'string.quoted.double.handlebars');
+});
+
+test('#58: a plain text/javascript script is NOT a handlebars template', async () => {
+  // The lookahead must not fire for a non-handlebars type; the body should fall
+  // through to source.js, not the handlebars embedding.
+  const src = '<script id="x" type="text/javascript">';
+  const idTok = (await tokenizeLines(src)).flat().find((t) => t.text === 'id');
+  assert.ok(
+    !idTok.scopes.includes('source.handlebars.embedded.html'),
+    `plain JS script should not be a handlebars embedding: ${JSON.stringify(idTok.scopes)}`
+  );
+});
+
 test('plain HTML outside any script tag is NOT treated as embedded', async () => {
   const src = '<p>{{body}}</p>';
   const tok = (await tokenizeLines(src)).flat().find((t) => t.text === 'p');
