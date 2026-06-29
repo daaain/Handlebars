@@ -23,6 +23,21 @@ const onigLib = oniguruma
     createOnigString: (s) => new oniguruma.OnigString(s),
   }));
 
+// External scopes the grammar includes for embedded languages. VS Code ships
+// these grammars; this repo does not. Returning `null` for them leaves the
+// include unresolved, which silently breaks the *enclosing* rule from compiling
+// (e.g. the YAML front-matter rule, whose body includes source.yaml). We resolve
+// them to an empty stub so the include becomes a harmless no-op. (Handlebars'
+// own HTML highlighting comes from its internal `html_tags` rules, not from
+// text.html.basic, so stubbing loses no coverage here.) Keep this list in sync
+// with the external `"include"` references in grammars/Handlebars.json.
+const STUBBED_SCOPES = new Set([
+  'text.html.basic',
+  'source.css',
+  'source.js',
+  'source.yaml',
+]);
+
 const registry = new vsctm.Registry({
   onigLib,
   loadGrammar: (scopeName) => {
@@ -31,16 +46,16 @@ const registry = new vsctm.Registry({
         vsctm.parseRawGrammar(fs.readFileSync(GRAMMAR_PATH, 'utf8'), GRAMMAR_PATH)
       );
     }
-    // The grammar references external scopes for embedded languages
-    // (text.html.basic, source.css, source.js, source.yaml). VS Code ships
-    // those grammars; this repo does not. Returning `null` leaves the include
-    // unresolved, which silently breaks the *enclosing* rule from compiling
-    // (e.g. the YAML front-matter rule, whose body includes source.yaml). To
-    // keep those rules intact we resolve unknown scopes to an empty stub
-    // grammar — the include becomes a harmless no-op rather than a footgun.
-    // (Handlebars' own HTML highlighting comes from its internal `html_tags`
-    // rules, not from text.html.basic, so stubbing loses no coverage here.)
-    return Promise.resolve({ scopeName, patterns: [] });
+    if (STUBBED_SCOPES.has(scopeName)) {
+      return Promise.resolve({ scopeName, patterns: [] });
+    }
+    // Fail fast on anything else: an unrecognised scope means a typo or a newly
+    // introduced external include that should be reviewed and added above,
+    // rather than silently stubbed away.
+    throw new Error(
+      `Unexpected grammar scope requested: ${JSON.stringify(scopeName)}. ` +
+        `Add it to STUBBED_SCOPES if it is a known embedded-language include.`
+    );
   },
 });
 
