@@ -24,6 +24,10 @@
 	<array>
 		<dict>
 			<key>include</key>
+			<string>#escaped_expression</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#yfm</string>
 		</dict>
 		<dict>
@@ -69,6 +73,15 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>escaped_expression</key>
+		<dict>
+			<key>comment</key>
+			<string>A backslash escapes a mustache so it renders literally (\{{foo}}); the escaped braces are consumed so the rest is plain text, not an expression. A double backslash (\\{{foo}}) escapes the backslash itself, leaving the mustache to evaluate, so the leading (?&lt;!\\) refuses to match there.</string>
+			<key>match</key>
+			<string>(?&lt;!\\)\\\{{2,3}</string>
+			<key>name</key>
+			<string>constant.character.escape.handlebars</string>
+		</dict>
 		<key>block_comments</key>
 		<dict>
 			<key>patterns</key>
@@ -990,6 +1003,10 @@
 					<string>(&lt;/)((?i:script))</string>
 					<key>patterns</key>
 					<array>
+						<dict>
+							<key>include</key>
+							<string>#escaped_expression</string>
+						</dict>
 						<dict>
 							<key>include</key>
 							<string>#block_comments</string>

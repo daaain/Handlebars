@@ -19,6 +19,7 @@ file_extensions:
 scope: text.html.handlebars
 contexts:
   main:
+    - include: escaped_expression
     - include: yfm
     - include: extends
     - include: block_comments
@@ -359,6 +360,7 @@ contexts:
                 1: punctuation.definition.tag.html
                 2: entity.name.tag.script.html
               pop: true
+            - include: escaped_expression
             - include: block_comments
             - include: comments
             - include: block_helper
@@ -367,6 +369,13 @@ contexts:
             - include: partial_and_var
             - include: html_tags
             - include: scope:text.html.basic
+  escaped_expression:
+    # A backslash escapes a mustache so it renders literally (\{{foo}}); the
+    # escaped braces are consumed so the rest is plain text, not an expression.
+    # A double backslash (\\{{foo}}) escapes the backslash itself, leaving the
+    # mustache to evaluate, so the leading (?<!\\) refuses to match there.
+    - match: '(?<!\\)\\\{{2,3}'
+      scope: constant.character.escape.handlebars
   partial_and_var:
     - match: '(\{\{~?\{*(>|!<)*)\s*(@?[-a-zA-Z0-9$_\./]+)*'
       captures:
