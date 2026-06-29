@@ -928,7 +928,7 @@
 		<key>inline_script</key>
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)((?i:script))\b(?:.*(type)=(["'](?:text/x-handlebars-template|text/x-handlebars|text/template|x-tmpl-handlebars)["']))(?![^&gt;]*/&gt;)</string>
+			<string>(?:^\s+)?(&lt;)((?i:script))\b(?=[^&gt;]*\stype=(["'](?:text/x-handlebars-template|text/x-handlebars|text/template|x-tmpl-handlebars)["']))(?![^&gt;]*/&gt;)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -940,16 +940,6 @@
 				<dict>
 					<key>name</key>
 					<string>entity.name.tag.script.html</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.other.attribute-name.html</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>string.quoted.double.html</string>
 				</dict>
 			</dict>
 			<key>end</key>

@@ -693,19 +693,13 @@
             ]
         },
         "inline_script": {
-            "begin": "(?:^\\s+)?(<)((?i:script))\\b(?:.*(type)=([\"'](?:text/x-handlebars-template|text/x-handlebars|text/template|x-tmpl-handlebars)[\"']))(?![^>]*/>)",
+            "begin": "(?:^\\s+)?(<)((?i:script))\\b(?=[^>]*\\stype=[\"'](?:text/x-handlebars-template|text/x-handlebars|text/template|x-tmpl-handlebars)[\"'])(?![^>]*/>)",
             "beginCaptures": {
                 "1": {
                     "name": "punctuation.definition.tag.html"
                 },
                 "2": {
                     "name": "entity.name.tag.script.html"
-                },
-                "3": {
-                    "name": "entity.other.attribute-name.html"
-                },
-                "4": {
-                    "name": "string.quoted.double.html"
                 }
             },
             "end": "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?",

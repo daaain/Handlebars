@@ -336,12 +336,10 @@ contexts:
     - match: <
       scope: invalid.illegal.bad-angle-bracket.html
   inline_script:
-    - match: '(?:^\s+)?(<)((?i:script))\b(?:.*(type)=(["''](?:text/x-handlebars-template|text/x-handlebars|text/template|x-tmpl-handlebars)["'']))(?![^>]*/>)'
+    - match: '(?:^\s+)?(<)((?i:script))\b(?=[^>]*\stype=(["''](?:text/x-handlebars-template|text/x-handlebars|text/template|x-tmpl-handlebars)["'']))(?![^>]*/>)'
       captures:
         1: punctuation.definition.tag.html
         2: entity.name.tag.script.html
-        3: entity.other.attribute-name.html
-        4: string.quoted.double.html
       push:
         - meta_scope: source.handlebars.embedded.html
         - match: (?<=</(script|SCRIPT))(>)(?:\s*\n)?
