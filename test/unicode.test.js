@@ -62,6 +62,12 @@ test('else if with a non-ASCII condition is consumed by the else rule', async ()
   await assertScope('{{else if активен}}', ' активен', 'meta.function.inline.else.handlebars');
 });
 
+test('extends preprocessor with a non-ASCII template name', async () => {
+  // Guards the widened `extends` rule ({{!< ...}}); mirrors the ASCII case in
+  // embedding.test.js so the Unicode name keeps its support.class scope.
+  await assertScope('{{!< макет}}', 'макет', 'support.class.handlebars');
+});
+
 test('non-ASCII hash key and value', async () => {
   const src = '{{foo имя=значение}}';
   await assertScope(src, 'имя', 'entity.other.attribute-name.handlebars');
