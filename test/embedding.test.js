@@ -36,17 +36,18 @@ test('layout extends preprocessor: {{!< layout}}', async () => {
 });
 
 test('inline <script> template embeds Handlebars', async () => {
-  const src = [
-    '<script type="text/x-handlebars" id="t">',
-    '  <h1>{{title}}</h1>',
-    '</script>',
-  ].join('\n');
+  const openTag = '<script type="text/x-handlebars" id="t">';
+  const body = '  <h1>{{title}}</h1>';
+  const closeTag = '</script>';
+  const src = [openTag, body, closeTag].join('\n');
   const lines = await tokenizeLines(src);
-  // Every line of the script body sits in the embedded Handlebars source scope.
-  for (const tok of lines.flat()) {
+  // Assert specifically on the template body (line 2), not the <script>/
+  // </script> boundary lines, so the check targets the embedded content itself.
+  const bodyTokens = lines[1];
+  for (const tok of bodyTokens) {
     assert.ok(
       tok.scopes.includes('source.handlebars.embedded.html'),
-      `token ${JSON.stringify(tok.text)} missing embedded scope: ${JSON.stringify(tok.scopes)}`
+      `body token ${JSON.stringify(tok.text)} missing embedded scope: ${JSON.stringify(tok.scopes)}`
     );
   }
   // The expression inside the template is still highlighted as Handlebars.
@@ -59,13 +60,17 @@ test('plain HTML outside any script tag is NOT treated as embedded', async () =>
   assert.ok(!tok.scopes.includes('source.handlebars.embedded.html'));
 });
 
-// The grammar carries a YAML front-matter rule, but its `begin` is anchored on
-// `---\n$` (a literal newline). VS Code feeds lines to the tokenizer without
-// their terminator, so this rule cannot fire there. This test documents that
-// reality — if a future change makes front-matter actually highlight, update it.
-test('YAML front-matter is inert under VS Code line feeding', async () => {
+test('YAML front-matter at the top of the document is highlighted', async () => {
   const src = '---\ntitle: Hello\n---\n<p>{{x}}</p>';
-  assert.equal(await lineHasScope(src, 1, 'markup.raw.yaml.front-matter'), false);
+  // Opening fence, content and closing fence are all in the front-matter block.
+  assert.equal(await lineHasScope(src, 1, 'markup.raw.yaml.front-matter'), true);
+  assert.equal(await lineHasScope(src, 2, 'markup.raw.yaml.front-matter'), true);
+  assert.equal(await lineHasScope(src, 3, 'markup.raw.yaml.front-matter'), true);
   // The body after the front-matter still highlights normally.
   assert.equal(await lineHasScope(src, 4, 'variable.parameter.handlebars'), true);
+});
+
+test('a bare --- not at the document start is NOT front-matter', async () => {
+  const src = '<p>hi</p>\n---\nstill body';
+  assert.equal(await lineHasScope(src, 2, 'markup.raw.yaml.front-matter'), false);
 });

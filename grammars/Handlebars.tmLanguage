@@ -1299,9 +1299,9 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(?&lt;!\s)---\n$</string>
+					<string>\A-{3}$</string>
 					<key>end</key>
-					<string>^---\s</string>
+					<string>^-{3}$</string>
 					<key>name</key>
 					<string>markup.raw.yaml.front-matter</string>
 					<key>patterns</key>

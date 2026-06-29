@@ -25,12 +25,23 @@ const onigLib = oniguruma
 
 const registry = new vsctm.Registry({
   onigLib,
-  loadGrammar: (scopeName) =>
-    scopeName === SCOPE_NAME
-      ? Promise.resolve(
-          vsctm.parseRawGrammar(fs.readFileSync(GRAMMAR_PATH, 'utf8'), GRAMMAR_PATH)
-        )
-      : Promise.resolve(null),
+  loadGrammar: (scopeName) => {
+    if (scopeName === SCOPE_NAME) {
+      return Promise.resolve(
+        vsctm.parseRawGrammar(fs.readFileSync(GRAMMAR_PATH, 'utf8'), GRAMMAR_PATH)
+      );
+    }
+    // The grammar references external scopes for embedded languages
+    // (text.html.basic, source.css, source.js, source.yaml). VS Code ships
+    // those grammars; this repo does not. Returning `null` leaves the include
+    // unresolved, which silently breaks the *enclosing* rule from compiling
+    // (e.g. the YAML front-matter rule, whose body includes source.yaml). To
+    // keep those rules intact we resolve unknown scopes to an empty stub
+    // grammar — the include becomes a harmless no-op rather than a footgun.
+    // (Handlebars' own HTML highlighting comes from its internal `html_tags`
+    // rules, not from text.html.basic, so stubbing loses no coverage here.)
+    return Promise.resolve({ scopeName, patterns: [] });
+  },
 });
 
 let grammarPromise;
@@ -46,9 +57,9 @@ async function tokenizeLines(source) {
   const grammar = await loadGrammar();
   let ruleStack = vsctm.INITIAL;
   // Feed each line WITHOUT its terminator, exactly as VS Code drives the
-  // tokenizer: `$` anchors match end-of-string and `\n` is never present. (A
-  // consequence: grammar rules that literally require `\n`, such as the YAML
-  // front-matter rule `---\n$`, are effectively inert in VS Code too.)
+  // tokenizer: `$` anchors match end-of-string and `\n` is never present. Any
+  // grammar rule that literally requires `\n` is therefore inert here, just as
+  // it is in VS Code — so the tests exercise real editor behaviour.
   return source.split('\n').map((line) => {
     const result = grammar.tokenizeLine(line, ruleStack);
     ruleStack = result.ruleStack;

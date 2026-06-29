@@ -356,8 +356,8 @@
                             "include": "source.yaml"
                         }
                     ],
-                    "begin": "(?<!\\s)---\\n$",
-                    "end": "^---\\s",
+                    "begin": "\\A-{3}$",
+                    "end": "^-{3}$",
                     "name": "markup.raw.yaml.front-matter"
                 }
             ]

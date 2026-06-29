@@ -454,9 +454,9 @@ contexts:
           pop: true
         - include: string
   yfm:
-    - match: (?<!\s)---\n$
+    - match: \A-{3}$
       push:
         - meta_scope: markup.raw.yaml.front-matter
-        - match: ^---\s
+        - match: ^-{3}$
           pop: true
         - include: scope:source.yaml
