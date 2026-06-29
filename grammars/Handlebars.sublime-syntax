@@ -52,7 +52,7 @@ contexts:
         - match: '--'
           scope: invalid.illegal.bad-comments-or-CDATA.html
   block_helper:
-    - match: '(\{\{)(~?\#)([-a-zA-Z0-9_\./>]+)\s?(@?[-a-zA-Z0-9_\./]+)*\s?(@?[-a-zA-Z0-9_\./]+)*\s?(@?[-a-zA-Z0-9_\./]+)*'
+    - match: '(\{\{)(~?\#)([-\p{L}\p{N}_\./>]+)\s?(@?[-\p{L}\p{N}_\./]+)*\s?(@?[-\p{L}\p{N}_\./]+)*\s?(@?[-\p{L}\p{N}_\./]+)*'
       captures:
         1: support.constant.handlebars
         2: support.constant.handlebars keyword.control
@@ -90,7 +90,7 @@ contexts:
         - match: '--'
           scope: invalid.illegal.bad-comments-or-CDATA.html
   else_token:
-    - match: '(\{\{)(~?else)(@?\s(if)\s([-a-zA-Z0-9_\.\(\s\)/]+))?'
+    - match: '(\{\{)(~?else)(@?\s(if)\s([-\p{L}\p{N}_\.\(\s\)/]+))?'
       captures:
         1: support.constant.handlebars
         2: support.constant.handlebars keyword.control
@@ -103,7 +103,7 @@ contexts:
             1: support.constant.handlebars
           pop: true
   end_block:
-    - match: '(\{\{)(~?/)([a-zA-Z0-9/_\.-]+)\s*'
+    - match: '(\{\{)(~?/)([\p{L}\p{N}/_\.-]+)\s*'
       captures:
         1: support.constant.handlebars
         2: support.constant.handlebars keyword.control
@@ -129,7 +129,7 @@ contexts:
     - match: \\'
       scope: constant.character.escape.js
   extends:
-    - match: '(\{\{!<)\s([-a-zA-Z0-9_\./]+)'
+    - match: '(\{\{!<)\s([-\p{L}\p{N}_\./]+)'
       captures:
         1: support.function.handlebars
         2: support.class.handlebars
@@ -143,7 +143,7 @@ contexts:
     - include: handlebars_attribute_name
     - include: handlebars_attribute_value
   handlebars_attribute_name:
-    - match: '\b([-a-zA-Z0-9_\.]+)\b='
+    - match: '\b([-\p{L}\p{N}_\.]+)\b='
       captures:
         1: variable.parameter.handlebars
       push:
@@ -153,7 +153,7 @@ contexts:
             1: variable.parameter.handlebars
           pop: true
   handlebars_attribute_value:
-    - match: '([-a-zA-Z0-9_\./]+)\b'
+    - match: '([-\p{L}\p{N}_\./]+)\b'
       captures:
         1: variable.parameter.handlebars
       push:
@@ -375,7 +375,7 @@ contexts:
     - match: '(?<!\\)\\\{{2,3}'
       scope: constant.character.escape.handlebars
   partial_and_var:
-    - match: '(\{\{~?\{*(>|!<)*)\s*(@?[-a-zA-Z0-9$_\./]+)*'
+    - match: '(\{\{~?\{*(>|!<)*)\s*(@?[-\p{L}\p{N}$_\./]+)*'
       captures:
         1: support.constant.handlebars
         3: variable.parameter.handlebars
