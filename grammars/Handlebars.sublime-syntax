@@ -19,6 +19,7 @@ file_extensions:
 scope: text.html.handlebars
 contexts:
   main:
+    - include: escaped_backslash
     - include: escaped_expression
     - include: yfm
     - include: extends
@@ -358,6 +359,7 @@ contexts:
                 1: punctuation.definition.tag.html
                 2: entity.name.tag.script.html
               pop: true
+            - include: escaped_backslash
             - include: escaped_expression
             - include: block_comments
             - include: comments
@@ -367,12 +369,22 @@ contexts:
             - include: partial_and_var
             - include: html_tags
             - include: scope:text.html.basic
+  escaped_backslash:
+    # A backslash escapes the following backslash, so each \\ pair renders as a
+    # single literal backslash. Only pairs leading up to a mustache matter for
+    # escaping (the lookahead), which is what lets an odd number of backslashes
+    # fall through to escaped_expression: the pairs are consumed here and the
+    # lone leftover backslash escapes the mustache.
+    - match: '\\\\(?=\\*\{{2,3})'
+      scope: constant.character.escape.handlebars
   escaped_expression:
     # A backslash escapes a mustache so it renders literally (\{{foo}}); the
     # escaped braces are consumed so the rest is plain text, not an expression.
-    # A double backslash (\\{{foo}}) escapes the backslash itself, leaving the
-    # mustache to evaluate, so the leading (?<!\\) refuses to match there.
-    - match: '(?<!\\)\\\{{2,3}'
+    # Any escaped-backslash pairs in front are consumed by escaped_backslash
+    # first, so this only ever sees the single leftover backslash of an odd-length
+    # run — an even run (e.g. \\{{foo}}) leaves no backslash here and the mustache
+    # evaluates normally.
+    - match: '\\\{{2,3}'
       scope: constant.character.escape.handlebars
   partial_and_var:
     - match: '(\{\{~?\{*(>|!<)*)\s*(@?[-\p{L}\p{N}$_\./]+)*'
