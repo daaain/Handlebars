@@ -3,9 +3,15 @@
 // Coverage for escaped mustaches (issues #67 and #106). In Handlebars a leading
 // backslash escapes a mustache so it renders literally rather than being
 // evaluated, e.g. `\{{foo}}` outputs the text "{{foo}}". The grammar must
-// therefore NOT highlight an escaped mustache as an expression. A *double*
-// backslash escapes the backslash itself, so `\\{{foo}}` still evaluates the
-// mustache — that case must keep its normal expression highlighting.
+// therefore NOT highlight an escaped mustache as an expression.
+//
+// Backslashes also escape each other, so what matters is the *parity* of the run
+// of backslashes immediately before the mustache: an odd run escapes the mustache
+// (the last backslash has no partner), while an even run leaves the mustache to
+// evaluate (every backslash is paired off). Each `\\` pair renders as one literal
+// backslash and is highlighted as a character escape; the lone leftover backslash
+// of an odd run escapes the mustache. So `\{{foo}}` and `\\\{{foo}}` are escaped,
+// while `\\{{foo}}` and `\\\\{{foo}}` still evaluate (issue raised in PR #116).
 
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
@@ -57,8 +63,44 @@ test('a double backslash does NOT escape: the mustache still evaluates', async (
   const src = '\\\\{{foo}}'; // two backslashes then {{foo}}
   await assertScope(src, '{{', 'support.constant.handlebars');
   await assertScope(src, 'foo', 'variable.parameter.handlebars');
-  // The backslashes themselves are not a mustache escape.
-  assert.equal(await anyTokenHasScope(src, 'constant.character.escape.handlebars'), false);
+  // The pair of backslashes is itself an escaped backslash, but it does NOT
+  // escape the mustache — the escape scope belongs to the `\\`, not the braces.
+  await assertScope(src, '\\\\', 'constant.character.escape.handlebars');
+});
+
+test('an escaped backslash is highlighted as a character escape', async () => {
+  await assertScope('\\\\{{foo}}', '\\\\', 'constant.character.escape.handlebars');
+});
+
+test('a triple backslash escapes the mustache (odd run)', async () => {
+  // \\\{{foo}} == escaped backslash (\\) + escaped mustache (\{{). The mustache
+  // is escaped, so `foo` must stay plain text rather than becoming a variable.
+  const src = '\\\\\\{{foo}}'; // three backslashes then {{foo}}
+  await assertScope(src, '\\\\', 'constant.character.escape.handlebars');
+  await assertScope(src, '\\{{', 'constant.character.escape.handlebars');
+  assert.equal(
+    await anyTokenHasScope(src, 'variable.parameter.handlebars'),
+    false,
+    'a triple backslash escapes the mustache, so it is not an expression'
+  );
+});
+
+test('a quadruple backslash does NOT escape: the mustache still evaluates', async () => {
+  // Four backslashes are two escaped-backslash pairs; nothing is left to escape
+  // the mustache, so it evaluates as usual.
+  const src = '\\\\\\\\{{foo}}'; // four backslashes then {{foo}}
+  await assertScope(src, '{{', 'support.constant.handlebars');
+  await assertScope(src, 'foo', 'variable.parameter.handlebars');
+});
+
+test('backslashes not preceding a mustache are left as plain text', async () => {
+  // Outside of a mustache context a backslash is an ordinary character (e.g. a
+  // Windows path in template text), so it must not be highlighted as an escape.
+  assert.equal(
+    await anyTokenHasScope('C:\\\\path\\\\to', 'constant.character.escape.handlebars'),
+    false,
+    'bare backslashes in plain text should not be a character escape'
+  );
 });
 
 test('a normal mustache is unaffected', async () => {
